@@ -29,6 +29,10 @@ This repository contains my personal experiment reports and templates for “电
 
 Note: The [script.js](./script.js) file contains very detailed comments and you should read it carefully and follow the instructions in the file. If you encounter some issues or you want some enhancements, remember that **AI tools** are always there to help you, feel free to ask AI!
 
+## License
+
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
+
 ## Acknowledgments
 
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-00A67E?style=for-the-badge&logo=openai&logoColor=white)](https://chatgpt.com/)
