@@ -4,7 +4,7 @@ This repository contains my personal experiment reports and templates for “电
 
 - Two HTML templates ([template-1.html](./template-1.html) and [template-2.html](./template-2.html)) for creating experiment reports.
 - My personal experiment report files (`实验报告x—...html`, `實驗報告x—...md`).
-- A Node.js script ([script.js](./script.js)) using Puppeteer to convert HTML files to PDF.
+- A Node.js [script](./script.js) using Puppeteer to convert HTML files to PDF.
 - One `img` folder that contains all pictures used in the reports.
 - One `pdf` folder that contains my reports and the two templates in PDF format.
 
