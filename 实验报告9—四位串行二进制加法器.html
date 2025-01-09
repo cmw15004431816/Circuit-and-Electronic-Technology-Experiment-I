@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<!--
+浏览器Ctrl+P，A4竖版，四边距离都设定为0.4"
+使用 \( \) 创建行内LaTeX公式
+使用 \[ \] 创建块级LaTeX公式
+-->
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>实验报告</title>
+  <style>
+    html {
+      width: 595px;
+      height: 842px;
+      margin: auto;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000000;
+      background-color: #FFFFFF;
+      line-height: 1.8;
+    }
+
+    .university {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .table-container {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .right-table {
+      position: absolute;
+      top: -55px;
+      right: -95px;
+      padding: 8px;
+      font-size: 14px;
+      width: 240px;
+      text-align: left;
+    }
+
+    .info-table,
+    .info-table2,
+    .info-table3,
+    .content-table {
+      width: 100%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .info-table td,
+    .info-table2 td,
+    .info-table3 td,
+    .content-table td {
+      color: #000000;
+      font-size: 18px;
+      border: none;
+    }
+
+    .info-table td:first-child {
+      width: 50%;
+    }
+
+    .info-table td:nth-child(2) {
+      width: 29%;
+    }
+
+    .info-table td:last-child {
+      width: 21%;
+      text-align: right;
+    }
+
+    .info-table2 td:first-child {
+      width: 68%;
+    }
+
+    .info-table2 td:last-child {
+      width: 32%;
+      text-align: right;
+    }
+
+    .info-table3 td:first-child {
+      width: 30%;
+    }
+
+    .info-table3 td:nth-child(2) {
+      width: 40%;
+      text-align: center;
+    }
+
+    .info-table3 td:last-child {
+      width: 30%;
+      text-align: right;
+    }
+
+    .footer {
+      text-align: right;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .content-table th,
+    .content-table td {
+      text-indent: 2em;
+      padding: 8px;
+      text-align: left;
+      color: #000000;
+      border: none;
+    }
+
+    a:link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      /*color: purple;*/
+      color: blue;
+      text-decoration: underline;
+    }
+
+    /* code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      font-family: Courier New;
+      border-radius: 4px;
+      font-size: 16px;
+    } */
+
+    p {
+      text-indent: 2em;
+    }
+
+    /* pre {
+      white-space: pre-wrap;
+    } */
+
+    pre {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: "Courier New", Courier, monospace;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    .keyword {
+      color: #0000ff;
+      font-weight: bold;
+    }
+
+    .comment {
+      color: #008000;
+      font-style: italic;
+    }
+
+    .string {
+      color: #a31515;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figcaption {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .data {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      justify-content: center;
+    }
+
+    .data th,
+    .data td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .data td.diagonalRising {
+      background: linear-gradient(to right bottom, #ffffff 0%, #ffffff 49.9%, #000000 50%, #000000 51%, #ffffff 51.1%, #ffffff 100%);
+    }
+
+    .data td.diagonal {
+      background: linear-gradient(to right top, #ffffff 0%, #ffffff 49.9%, #000000 50%, #000000 51%, #ffffff 51.1%, #ffffff 100%);
+    }
+
+    .data td.diagonalCross {
+      position: relative;
+      background: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 49.9%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 51%, rgba(0, 0, 0, 0) 51.1%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .data td.diagonalCross:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(to right top, #ffffff 0%, #ffffff 49.9%, #000000 50%, #000000 51%, #ffffff 51.1%, #ffffff 100%);
+    }
+
+    .data th {
+      background-color: #f2f2f2;
+    }
+
+    .data tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+  <div class="university"><img alt="Zhejiang university" src="img/report.png"></div>
+
+  <div class="table-container">
+    <h2
+      style="text-align: center; font-weight: normal; font-size: 36px; margin-top: 10px; margin-bottom: 40px; display: inline-block; position: relative;">
+      实验报告</h2>
+    <table class="right-table">
+      <tr>
+        <td>专业：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>姓名：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>学号：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>日期：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>地点：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+    </table>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td>课程名称：<u>电路与电子技术实验 I</u></td>
+      <td>指导老师：<u>xxxxxx</u></td>
+      <td>成绩：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>分</td>
+    </tr>
+  </table>
+  <table class="info-table2">
+    <tr>
+      <td>实验名称：<u>四位串行二进制加法器</u></td>
+      <td>实验类型：<u>个人实验</u></td>
+    </tr>
+  </table>
+  <table class="info-table3">
+    <tr>
+      <td>姓名：<u>xxxxxx</u></td>
+      <td>学号：<u>xxxxxxxxxxxx</u></td>
+      <td>同组学生姓名：<u>无</u></td>
+    </tr>
+  </table>
+
+  <p style="line-height: 1.8; font-size: 24px; margin-bottom: 20px;  margin-left: -50px;">目录：</p>
+  <table class="content-table">
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-1">一、实验目的和要求</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-2">二、实验内容和原理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-3">三、主要仪器设备</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-4">四、操作方法和实验步骤</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-5">五、实验数据记录和处理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-6">六、实验结果与分析</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-7">七、讨论、心得</a></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center">
+    <h1>电路与电子技术实验报告</h1>
+    <h1>实验9—四位串行二进制加法器</h1>
+  </div>
+
+  <h2 id="title-1">一、实验目的和要求</h2>
+
+  <h2>实验目的</h2>
+
+  <ol>
+    <li>熟悉Quartus II软件的使用；</li>
+    <li>掌握逻辑功能的VHDL语言描述和原理图描述的方法；</li>
+    <li>进一步掌握四位串行二进制加法器的设计方法；</li>
+    <li>掌握用仿真波形验证电路功能的方法。</li>
+  </ol>
+
+
+  <h2>实验要求</h2>
+
+  <ol>
+    <li>请不要带食物进入实验室，更不允许在实验室用餐；</li>
+    <li>请勿大声喧哗，不要随意走动，不要私自更换实验设备；</li>
+    <li>请听从实验指导老师的安排，独立完成实验；</li>
+    <li>实验完毕请关闭电源，万用电表用完后关闭电源归还，并摆放整齐；整理实验桌面，保持实验室整洁；</li>
+    <li>请注意用电安全，包括人身安全和设备安全；</li>
+    <li>文明实验。</li>
+  </ol>
+
+  <h2 id="title-2">二、实验内容和原理</h2>
+
+  <h2>实验内容</h2>
+
+  <ol>
+    <li>用原理图方式描述4位串行全加器的功能；</li>
+    <li>用VHDL语言描述1位二进制全加器的功能；</li>
+    <li>通过波形仿真验证4位全加器的功能。</li>
+  </ol>
+
+  <h2>实验原理</h2>
+
+  <p>本实验为软件实验，主要原理为<strong>硬件描述语言</strong>VHDL。</p>
+
+  <p>对于<strong>4位串行进位二进制全加器</strong>：</p>
+
+  <ul style="padding-left: 4em;">
+    <li>4位串行进位二进制全加器以1位全加器的设计为基础，将四个1位二进制全加器串接即可构成四位二进制全加器；
+      顶层采用原理图描述，底层采用VHDL语言描述，充分发挥原理图描述的直观性和HDL语言的灵活性。</li>
+  </ul>
+
+  <p>对于<strong>1位二进制全加器</strong>：</p>
+
+  <p>其真值表为：</p>
+
+  <table class="data">
+    <tr>
+      <th>输入</th>
+      <th>输出</th>
+    </tr>
+    <tr>
+      <th>\(A\quad B\quad C_i\)</th>
+      <th>\(S\quad C_0\)</th>
+    </tr>
+    <tr>
+      <td>\(0\quad\,\, 0\quad\,\, 0\)</td>
+      <td>\(0\quad\,\, 0\)</td>
+    </tr>
+    <tr>
+      <td>\(0\quad\,\, 0\quad\,\, 1\)</td>
+      <td>\(1\quad\,\, 0\)</td>
+    </tr>
+    <tr>
+      <td>\(0\quad\,\, 1\quad\,\, 0\)</td>
+      <td>\(1\quad\,\, 0\)</td>
+    </tr>
+    <tr>
+      <td>\(0\quad\,\, 1\quad\,\, 1\)</td>
+      <td>\(0\quad\,\, 1\)</td>
+    </tr>
+    <tr>
+      <td>\(1\quad\,\, 0\quad\,\, 0\)</td>
+      <td>\(1\quad\,\, 0\)</td>
+    </tr>
+    <tr>
+      <td>\(1\quad\,\, 0\quad\,\, 1\)</td>
+      <td>\(0\quad\,\, 1\)</td>
+    </tr>
+    <tr>
+      <td>\(1\quad\,\, 1\quad\,\, 0\)</td>
+      <td>\(0\quad\,\, 1\)</td>
+    </tr>
+    <tr>
+      <td>\(1\quad\,\, 1\quad\,\, 1\)</td>
+      <td>\(1\quad\,\, 1\)</td>
+    </tr>
+  </table>
+
+  <p>总结出函数式如下：</p>
+
+  \[S=\overline A\:\overline B\:C_i+\overline A\:B\:\overline C_i+A\:\overline B\:\overline C_i+A\:B\:C_i=A\oplus^*
+  B\oplus C\]
+
+  \[C_0=\overline A\: B\: C_i+A\: \overline B\: C_i+A\: B\: \overline C_i+A\: B\: C_i=A\: B+B\: C_i+A\: C_i\]
+
+  <p>有了1位二进制全加器以后，按照下图连线，即可得到4位串行进位二进制加法器。</p>
+
+  <figure>
+    <img src="img/61.png" alt="4位串行进位二进制全加器" width="500">
+    <figcaption>4位串行进位二进制全加器连线图</figcaption>
+  </figure>
+
+  <p>上图中每一个方块都代表一个1位二进制全加器。</p>
+
+  <p><sup>*</sup>：\(\oplus\)代表异或（NAND）。</p>
+
+  <h2 id="title-3">三、主要仪器设备</h2>
+
+  <p>计算机，Windows 7系统，Quartus Prime 17.1软件；Altera制，FPGA类产品，编号MAX 10 10M50，10M50DAF484C7G开发板。</p>
+
+  <h2 id="title-4">四、操作方法和实验步骤</h2>
+
+  <p>首先实现上文的连线图接线，然后用VHDL实现1位二进制全加器：</p>
+
+  <pre><code>
+    <span class="keyword">LIBRARY</span> ieee;
+    <span class="keyword">USE</span> <span class="string">ieee.std_logic_1164.ALL</span>;
+    
+    <span class="comment">--  Entity Declaration</span>
+    
+    <span class="keyword">ENTITY</span> full_adder <span class="keyword">IS</span>
+    
+      <span class="comment">-- {{ALTERA_IO_BEGIN}} DO NOT REMOVE THIS LINE!</span>
+    
+      <span class="keyword">PORT</span> (
+        a : <span class="keyword">IN</span> STD_LOGIC;
+        b : <span class="keyword">IN</span> STD_LOGIC;
+        ci : <span class="keyword">IN</span> STD_LOGIC;
+        co : <span class="keyword">OUT</span> STD_LOGIC;
+        s : <span class="keyword">OUT</span> STD_LOGIC
+      );
+    
+      <span class="comment">-- {{ALTERA_IO_END}} DO NOT REMOVE THIS LINE!</span>
+    
+    <span class="keyword">END</span> full_adder;
+    
+    --  <span class="comment">Architecture Body</span>
+    
+    <span class="keyword">ARCHITECTURE</span> <span class="string">full_adder_architecture</span> <span class="keyword">OF</span> full_adder <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+      s &lt;= a <span class="keyword">XOR</span> b <span class="keyword">XOR</span> ci;
+      co &lt;= (a <span class="keyword">AND</span> b) <span class="keyword">OR</span> (b <span class="keyword">AND</span> ci) <span class="keyword">OR</span> (ci <span class="keyword">AND</span> a);
+    <span class="keyword">END</span> <span class="string">full_adder_architecture</span>;
+    </code></pre>
+
+  <p>最终的效果图如下：</p>
+
+  <figure style="margin: auto;">
+    <img src="img/62.png" alt="4位串行进位二进制全加器" width="550">
+    <figcaption>4位串行进位二进制全加器效果图</figcaption>
+  </figure>
+
+  <p>连接完毕后进行仿真测试，测试结果请参见<a href="#title-6">实验结果与分析</a>部分。</p>
+
+  <p>最后进行引脚约束，上板测试，观察结果是否正确。（可选）</p>
+
+  <p>最后对上面实现4位二进制全加器的基本步骤进行总结：</p>
+
+  <ol style="margin-left: 2em;">
+    <li>创建工程；</li>
+    <li>依照原理图连接4位串行进位二进制全加器的电路；</li>
+    <li>使用VHDL实现1位二进制全加器；</li>
+    <li>仿真验证；</li>
+    <li>引脚约束，上板测试。（可选）</li>
+  </ol>
+
+  <h2 id="title-5">五、实验数据记录和处理</h2>
+
+  <p>本实验没有实验数据，无需进行处理。</p>
+
+  <h2 id="title-6">六、实验结果与分析</h2>
+
+  <p>本实验实现了4位串行进位二进制全加器，并验证了其正确性，仿真波形简图及验证如下：</p>
+
+  <figure style="margin: auto;">
+    <img src="img/64.png" alt="4位串行进位二进制全加器" width="550">
+    <figcaption>4位串行进位二进制全加器仿真波形简图</figcaption>
+  </figure>
+
+  <p>
+    上图中的<code>aa</code>、<code>bb</code>分别为两个4位加数，<code>c0</code>为最低位的carry-in，在加法器中应当置0。<code>ss</code>为4位的相加结果输出，<code>c4</code>是最高位的carry-out，如其为<code>1</code>，则表示我们的计算发生了overflow（4位加法，结果<code>ss</code>的范围在<strong>不大于15</strong>的自然数，若超出该范围，如计算<code>8 + 9 (=17, > 15)</code>即发生overflow。发生overflow时，<code>ss</code>的结果不再具有意义）。
+  </p>
+
+  <p>上面的波形图很清晰的显示了我们的加法器的计算结果：</p>
+
+  <ul>
+    <li>\(0+0=0\qquad 1+0=1\qquad 2+1=3\qquad 3+1=4\)</li>
+    <li>\(4+2=6\qquad 5+2=7\qquad 6+3=9\qquad 7+3=10\)</li>
+    <li>\(8+4=12\quad\;\, 9+4=13\quad\;\, 10+5=15\quad 11+5=\)<span
+        style="color: red; font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw; font-size: 20px;"> overflow</span></li>
+    <li>\(12+6=\)<span
+        style="color: red; font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw; font-size: 20px;">overflow</span>\(\qquad\qquad\;
+      13+6=\)<span style="color: red; font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw; font-size: 20px;">overflow</span>
+    </li>
+    <li>\(
+      14+7=\)<span
+        style="color: red; font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw; font-size: 20px;">overflow</span>\(\qquad\qquad\;
+      15+7=\)<span style="color: red; font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw; font-size: 20px;">overflow</span>
+    </li>
+    <li>\(0+8=8\qquad 1+8=9\qquad 2+9=11\qquad 3+9=12\)</li>
+    <li>\(\cdots\cdots\)（更多请自行看图验证，限于篇幅，列举到此）</li>
+  </ul>
+
+  <p>下面给出更加详细的仿真波形图：</p>
+
+  <figure style="margin: auto;">
+    <img src="img/63.png" alt="4位串行进位二进制全加器" width="550">
+    <figcaption>4位串行进位二进制全加器仿真波形全图</figcaption>
+  </figure>
+
+  <p>容易知道，我们的计算结果均正确，4位串行进位二进制全加器实现正确。</p>
+
+  <h2 id="title-7">七、讨论、心得</h2>
+
+  <h2>讨论</h2>
+
+  <p>本次实验采用了<span style="color: red;"><strong>自顶向下</strong></span>的方法，遵循着<span
+      style="color: red;"><strong>模块化</strong></span>的思路，用原理图与硬件描述语言VHDL相结合的方式实现了4位串行进位二进制全加器。</p>
+
+  <p>但是这种方法比较复杂，尤其是连线部分非常繁琐，对于更大工程，本方法具有局限性。</p>
+
+  <p>VHDL本身可以进行<span style="color: red;"><strong>模块化</strong></span>描述。因此连线部分完全可以省去，使用全VHDL描述的方法实现4位串行进位二进制全加器如下：</p>
+
+  <p>首先实现1位二进制全加器：</p>
+
+  <pre><code>
+    <span class="comment">-- 1位全加器模块</span>
+    <span class="keyword">LIBRARY</span> IEEE;
+    <span class="keyword">USE</span> <span class="string">IEEE.STD_LOGIC_1164.ALL</span>;
+    <span class="keyword">USE</span> <span class="string">IEEE.STD_LOGIC_ARITH.ALL</span>;
+    <span class="keyword">USE</span> <span class="string">IEEE.STD_LOGIC_UNSIGNED.ALL</span>;
+    
+    <span class="keyword">ENTITY</span> FullAdder <span class="keyword">IS</span>
+        <span class="keyword">PORT</span> (
+            A : <span class="keyword">IN</span> STD_LOGIC;
+            B : <span class="keyword">IN</span> STD_LOGIC;
+            Cin : <span class="keyword">IN</span> STD_LOGIC;
+            Sum : <span class="keyword">OUT</span> STD_LOGIC;
+            Cout : <span class="keyword">OUT</span> STD_LOGIC
+        );
+    <span class="keyword">END</span> FullAdder;
+    
+    <span class="keyword">ARCHITECTURE</span> Behavioral <span class="keyword">OF</span> FullAdder <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">PROCESS</span> (A, B, Cin)
+        <span class="keyword">BEGIN</span>
+          Sum &lt;= A <span class="keyword">XOR</span> B <span class="keyword">XOR</span> Cin;
+          Cout &lt;= (A <span class="keyword">AND</span> B) <span class="keyword">OR</span> (B <span class="keyword">AND</span> Cin) <span class="keyword">OR</span> (Cin <span class="keyword">AND</span> A);
+        <span class="keyword">END PROCESS</span>;
+    <span class="keyword">END</span> Behavioral;
+    
+  </code></pre>
+
+  <p>然后建立4位串行进位二进制全加器顶层模块，并在其中实例化前面已经建好的1位二进制全加器：</p>
+
+  <pre><code>
+    <span class="comment">-- 4位串行进位二进制全加器顶层模块</span>
+    <span class="keyword">LIBRARY</span> IEEE;
+    <span class="keyword">USE</span> <span class="string">IEEE.STD_LOGIC_1164.ALL</span>;
+    <span class="keyword">USE</span> <span class="string">IEEE.STD_LOGIC_ARITH.ALL</span>;
+    <span class="keyword">USE</span> <span class="string">IEEE.STD_LOGIC_UNSIGNED.ALL</span>;
+    
+    <span class="keyword">ENTITY</span> SerialAdder4Bit <span class="keyword">IS</span>
+        <span class="keyword">PORT</span> (
+            A : <span class="keyword">IN</span> STD_LOGIC_VECTOR(3 <span class="keyword">DOWNTO</span> 0);
+            B : <span class="keyword">IN</span> STD_LOGIC_VECTOR(3 <span class="keyword">DOWNTO</span> 0);
+            Cin : <span class="keyword">IN</span> STD_LOGIC;
+            Sum : <span class="keyword">OUT</span> STD_LOGIC_VECTOR(3 <span class="keyword">DOWNTO</span> 0);
+            Cout : <span class="keyword">OUT</span> STD_LOGIC
+        );
+    <span class="keyword">END</span> SerialAdder4Bit;
+    
+    <span class="keyword">ARCHITECTURE</span> Behavioral <span class="keyword">OF</span> SerialAdder4Bit <span class="keyword">IS</span>
+        <span class="keyword">SIGNAL</span> carry : STD_LOGIC_VECTOR(3 <span class="keyword">DOWNTO</span> 0);
+    <span class="keyword">BEGIN</span>
+        <span class="comment">-- 实例化1位全加器</span>
+        FA0 : <span class="keyword">ENTITY</span> work.FullAdder <span class="keyword">PORT MAP</span> (
+            A =&gt; A(0),
+            B =&gt; B(0),
+            Cin =&gt; Cin,
+            Sum =&gt; Sum(0),
+            Cout =&gt; carry(0)
+            );
+    
+        FA1 : <span class="keyword">ENTITY</span> work.FullAdder <span class="keyword">PORT MAP</span> (
+            A =&gt; A(1),
+            B =&gt; B(1),
+            Cin =&gt; carry(0),
+            Sum =&gt; Sum(1),
+            Cout =&gt; carry(1)
+            );
+    
+        FA2 : <span class="keyword">ENTITY</span> work.FullAdder <span class="keyword">PORT MAP</span> (
+            A =&gt; A(2),
+            B =&gt; B(2),
+            Cin =&gt; carry(1),
+            Sum =&gt; Sum(2),
+            Cout =&gt; carry(2)
+            );
+    
+        FA3 : <span class="keyword">ENTITY</span> work.FullAdder <span class="keyword">PORT MAP</span> (
+            A =&gt; A(3),
+            B =&gt; B(3),
+            Cin =&gt; carry(2),
+            Sum =&gt; Sum(3),
+            Cout =&gt; carry(3)
+            );
+    
+        Cout &lt;= carry(3);
+    <span class="keyword">END</span> Behavioral;
+    </code></pre>
+
+  <p>这样，我们就实现了4位串行进位二进制全加器。效果与上文中实现的相同，而且代码更加清晰简洁，易于维护，不需要考虑复杂的连线过程。</p>
+
+  <p>除了自顶向下的方法之外，由于4位二进制串行进位加法器的简单性，我们可以考虑直接实现（列真值表，分析逻辑函数），但分析过程十分繁琐，这里限于篇幅从略。必须指出的是，只有对于最基本，最简单的模块，我们才考虑直接实现。<span
+      style="color: red;"><strong>自顶向下</strong></span>仍然是最重要且最普适的实现方法。</p>
+
+  <h2>心得</h2>
+
+  <p>笔者已经具有熟练的Verilog基础，再进行本次实验的时候自然感觉十分简单。通过本次实验，笔者对比了Verilog和VHDL两种硬件描述语言的区别，接触并使用了新的软件工具Quartus Prime
+    17.1（区别于笔者目前在用的Vivado 2024.1）。</p>
+
+  <p>VHDL和Verilog对于硬件的描述思路是相同的，但VHDL稍显繁琐。对于Quartus Prime
+    17.1，笔者的感受是：总体上并不好用，有很多很复杂但实际上并无意义的操作——这对于初学者来讲并不容易上手并且非常容易犯错。工具的更新迭代是十分迅速的，希望我们的实验室能够紧跟时代，绽放活力！</p>
+</body>
+
+</html>

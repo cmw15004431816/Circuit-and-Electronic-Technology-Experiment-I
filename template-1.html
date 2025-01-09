@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--
+浏览器Ctrl+P，A4竖版，四边距离都设定为0.4"
+使用 \( \) 创建行内LaTeX公式
+使用 \[ \] 创建块级LaTeX公式
+-->
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>实验报告</title>
+  <style>
+    html {
+      width: 595px;
+      height: 842px;
+      margin: auto;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000000;
+      background-color: #FFFFFF;
+      line-height: 1.8;
+    }
+
+    .university {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .table-container {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .right-table {
+      position: absolute;
+      top: -55px;
+      right: -95px;
+      padding: 8px;
+      font-size: 14px;
+      width: 240px;
+      text-align: left;
+    }
+
+    .info-table,
+    .info-table2,
+    .info-table3,
+    .content-table {
+      width: 100%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .info-table td,
+    .info-table2 td,
+    .info-table3 td,
+    .content-table td {
+      color: #000000;
+      font-size: 18px;
+      border: none;
+    }
+
+    .info-table td:first-child {
+      width: 50%;
+    }
+
+    .info-table td:nth-child(2) {
+      width: 29%;
+    }
+
+    .info-table td:last-child {
+      width: 21%;
+      text-align: right;
+    }
+
+    .info-table2 td:first-child {
+      width: 68%;
+    }
+
+    .info-table2 td:last-child {
+      width: 32%;
+      text-align: right;
+    }
+
+    .info-table3 td:first-child {
+      width: 30%;
+    }
+
+    .info-table3 td:nth-child(2) {
+      width: 40%;
+      text-align: center;
+    }
+
+    .info-table3 td:last-child {
+      width: 30%;
+      text-align: right;
+    }
+
+    .footer {
+      text-align: right;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .content-table th,
+    .content-table td {
+      text-indent: 2em;
+      padding: 8px;
+      text-align: left;
+      color: #000000;
+      border: none;
+    }
+
+    a:link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      /*color: purple;*/
+      color: blue;
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      font-family: Courier New;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    p {
+      text-indent: 2em;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figcaption {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+  <div class="university"><img alt="Zhejiang university" src="img/report.png"></div>
+
+  <div class="table-container">
+    <h2
+      style="text-align: center; font-weight: normal; font-size: 36px; margin-top: 10px; margin-bottom: 40px; display: inline-block; position: relative;">
+      实验报告</h2>
+    <table class="right-table">
+      <tr>
+        <td>专业：<u>xxx（请修改）xxx</u></td>
+      </tr>
+      <tr>
+        <td>姓名：<u>xxx（请修改）xxx</u></td>
+      </tr>
+      <tr>
+        <td>学号：<u>xxx（请修改）xxx</u></td>
+      </tr>
+      <tr>
+        <td>日期：<u>xxx（请修改）xxx</u></td>
+      </tr>
+      <tr>
+        <td>地点：<u>xxx（请修改）xxx</u></td>
+      </tr>
+    </table>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td>课程名称：<u>电路与电子技术实验 I</u></td>
+      <td>指导老师：<u>xxxxxx</u></td>
+      <td>成绩：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>分</td>
+    </tr>
+  </table>
+  <table class="info-table2">
+    <tr>
+      <td>实验名称：<u>xxx（请修改）xxx</u></td>
+      <td>实验类型：<u>个人实验</u></td>
+    </tr>
+  </table>
+  <table class="info-table3">
+    <tr>
+      <td>姓名：<u>xxxxxx</u></td>
+      <td>学号：<u>xxx（请修改）xxx</u></td>
+      <td>同组学生姓名：<u>无</u></td>
+    </tr>
+  </table>
+
+  <p style="line-height: 1.8; font-size: 24px; margin-bottom: 20px;  margin-left: -50px;">目录：</p>
+  <table class="content-table">
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-1">一、实验目的和要求</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-2">二、实验内容和原理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-3">三、主要仪器设备</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-4">四、操作方法和实验步骤</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-5">五、实验数据记录和处理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-6">六、实验结果与分析</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-7">七、讨论、心得</a></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center">
+    <h1>电路与电子技术实验报告</h1>
+    <h1>实验x—<strong>xxx（请修改）xxx</strong></h1>
+  </div>
+
+  <h2 id="title-1">一、实验目的和要求</h2>
+
+  <h2>实验目的</h2>
+
+  <h2>实验要求</h2>
+
+  <ol>
+    <li>请不要带食物进入实验室，更不允许在实验室用餐；</li>
+    <li>请勿大声喧哗，不要随意走动，不要私自更换实验设备；</li>
+    <li>请听从实验指导老师的安排，独立完成实验；</li>
+    <li>实验完毕请关闭电源，万用电表用完后关闭电源归还，并摆放整齐；整理实验桌面，保持实验室整洁；</li>
+    <li>请注意用电安全，包括人身安全和设备安全；</li>
+    <li>文明实验。</li>
+  </ol>
+
+  <h2 id="title-2">二、实验内容和原理</h2>
+
+  <h2>实验内容</h2>
+
+  <h2>实验原理</h2>
+
+  <h2 id="title-3">三、主要仪器设备</h2>
+
+  <h2 id="title-4">四、操作方法和实验步骤</h2>
+
+  <h2 id="title-5">五、实验数据记录和处理</h2>
+
+  <h2 id="title-6">六、实验结果与分析</h2>
+
+  <h2 id="title-7">七、讨论、心得</h2>
+
+</body>
+
+</html>

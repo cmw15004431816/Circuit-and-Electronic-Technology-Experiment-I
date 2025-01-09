@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!--
+浏览器Ctrl+P，A4竖版，四边距离都设定为0.4"
+使用 \( \) 创建行内LaTeX公式
+使用 \[ \] 创建块级LaTeX公式
+-->
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>实验报告</title>
+  <style>
+    html {
+      width: 595px;
+      height: 842px;
+      margin: auto;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000000;
+      background-color: #FFFFFF;
+      line-height: 1.8;
+    }
+
+    .university {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .table-container {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .right-table {
+      position: absolute;
+      top: -55px;
+      right: -95px;
+      padding: 8px;
+      font-size: 14px;
+      width: 240px;
+      text-align: left;
+    }
+
+    .info-table,
+    .info-table2,
+    .info-table3,
+    .content-table {
+      width: 100%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .info-table td,
+    .info-table2 td,
+    .info-table3 td,
+    .content-table td {
+      color: #000000;
+      font-size: 18px;
+      border: none;
+    }
+
+    .info-table td:first-child {
+      width: 50%;
+    }
+
+    .info-table td:nth-child(2) {
+      width: 29%;
+    }
+
+    .info-table td:last-child {
+      width: 21%;
+      text-align: right;
+    }
+
+    .info-table2 td:first-child {
+      width: 68%;
+    }
+
+    .info-table2 td:last-child {
+      width: 32%;
+      text-align: right;
+    }
+
+    .info-table3 td:first-child {
+      width: 30%;
+    }
+
+    .info-table3 td:nth-child(2) {
+      width: 40%;
+      text-align: center;
+    }
+
+    .info-table3 td:last-child {
+      width: 30%;
+      text-align: right;
+    }
+
+    .footer {
+      text-align: right;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .content-table th,
+    .content-table td {
+      text-indent: 2em;
+      padding: 8px;
+      text-align: left;
+      color: #000000;
+      border: none;
+    }
+
+    a:link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      /*color: purple;*/
+      color: blue;
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      font-family: Courier New;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    p {
+      text-indent: 2em;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figcaption {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .truth-table {
+      border-collapse: collapse;
+      width: auto;
+      margin: 20px auto;
+      font-family: "Times New Roman", serif;
+      text-align: center;
+    }
+
+    .truth-table th,
+    .truth-table td {
+      border: 1px solid black;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .truth-table th {
+      font-style: italic;
+      background-color: #f9f9f9;
+    }
+
+    .truth-table td {
+      vertical-align: middle;
+    }
+
+    .truth-table sup {
+      font-size: 12px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+  <div class="university"><img alt="Zhejiang university" src="img/report.png"></div>
+
+  <div class="table-container">
+    <h2
+      style="text-align: center; font-weight: normal; font-size: 36px; margin-top: 10px; margin-bottom: 40px; display: inline-block; position: relative;">
+      实验报告</h2>
+    <table class="right-table">
+      <tr>
+        <td>专业：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>姓名：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>学号：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>日期：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>地点：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+    </table>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td>课程名称：<u>电路与电子技术实验 I</u></td>
+      <td>指导老师：<u>xxxxxx</u></td>
+      <td>成绩：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>分</td>
+    </tr>
+  </table>
+  <table class="info-table2">
+    <tr>
+      <td>实验名称：<u>集成触发器应用</u></td>
+      <td>实验类型：<u>个人实验</u></td>
+    </tr>
+  </table>
+  <table class="info-table3">
+    <tr>
+      <td>姓名：<u>xxxxxx</u></td>
+      <td>学号：<u>xxxxxxxxxxxx</u></td>
+      <td>同组学生姓名：<u>无</u></td>
+    </tr>
+  </table>
+
+  <p style="line-height: 1.8; font-size: 24px; margin-bottom: 20px;  margin-left: -50px;">目录：</p>
+  <table class="content-table">
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-1">一、实验目的和要求</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-2">二、实验内容和原理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-3">三、主要仪器设备</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-4">四、操作方法和实验步骤</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-5">五、实验数据记录和处理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-6">六、实验结果与分析</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-7">七、讨论、心得</a></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center">
+    <h1>电路与电子技术实验报告</h1>
+    <h1>实验10—集成触发器应用</h1>
+  </div>
+
+  <h2 id="title-1">一、实验目的和要求</h2>
+
+  <h2>实验目的</h2>
+  <ol>
+    <li>掌握集成触发器的功能测试方法；</li>
+    <li>熟悉触发器的两种触发方式（电平触发和边沿触发）及其触发特点；</li>
+    <li>掌握集成触发器的简单应用。</li>
+  </ol>
+  <h2>实验要求</h2>
+
+  <ol>
+    <li>请不要带食物进入实验室，更不允许在实验室用餐；</li>
+    <li>请勿大声喧哗，不要随意走动，不要私自更换实验设备；</li>
+    <li>请听从实验指导老师的安排，独立完成实验；</li>
+    <li>实验完毕请关闭电源，万用电表用完后关闭电源归还，并摆放整齐；整理实验桌面，保持实验室整洁；</li>
+    <li>请注意用电安全，包括人身安全和设备安全；</li>
+    <li>文明实验。</li>
+  </ol>
+
+  <h2 id="title-2">二、实验内容和原理</h2>
+
+  <h2>实验内容</h2>
+
+  <ol>
+    <li>测试 <code>74LS74</code> 和 <code>74LS107</code> 的逻辑功能；</li>
+    <li>D&rarr;T′、JK&rarr;T′、D&rarr;JK的转换实验；</li>
+    <li>用双D触发器设计一个单发脉冲发生器。</li>
+  </ol>
+
+  <h2>实验原理</h2>
+
+  <ol>
+    <li><code>74LS74</code> 型双D触发器——异步置位、复位；上升沿触发。<br><strong>状态方程：</strong>\(Q^{n+1}=D\)</li>
+    <li><code>74LS107</code> 型双JK触发器——带清除；主从触发，下降沿触发。<br><strong>状态方程：</strong>\(Q^{n+1}=J \overline{Q^n}+\overline K
+      Q^n\)</li>
+  </ol>
+
+  <h2 id="title-3">三、主要仪器设备</h2>
+
+  <p><code>74LS74</code> 型双D触发器和 <code>74LS107</code> 型双JK触发器。</p>
+
+  <h2 id="title-4">四、操作方法和实验步骤</h2>
+
+  <h3>实验任务1：测试 <code>74LS74</code> 和 <code>74LS107</code> 的逻辑功能</h3>
+
+  <p>对于 <code>74LS74</code> 型双D触发器，其引脚排列如下：</p>
+
+  <figure>
+    <img src="img/65.png" alt="" width="500">
+    <figcaption><code>74LS74</code> 型双D触发器的引脚排列图</figcaption>
+  </figure>
+
+  <p>对之进行测试，得到如下真值表：</p>
+
+  <table class="truth-table">
+    <thead>
+      <tr>
+        <th>\(\overline{S_D}\)</th>
+        <th>\(\overline{R_D}\)</th>
+        <th>CP</th>
+        <th>D</th>
+        <th>Q</th>
+        <th>\(\overline{Q}\)</th>
+        <th style="font-style: normal;">备注</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>1</td>
+        <td>0</td>
+        <td>置位</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>0</td>
+        <td>1</td>
+        <td>清零</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>1<sup>*</sup></td>
+        <td>1<sup>*</sup></td>
+        <td>禁用，不确定</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>&uarr;</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>D触发器，置位</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>&uarr;</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>D触发器，复位</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>&times;</td>
+        <td>Q<sub>0</sub></td>
+        <td>\(\overline{Q_0}\)</td>
+        <td>D触发器，保持</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>可见，<code>74LS74</code> 型芯片中的D触发器的功能符合我们的预期。</p>
+  <hr>
+  <p>对于 <code>74LS107</code> 型双JK触发器，其引脚排列如下：</p>
+
+  <figure>
+    <img src="img/66.jpg" alt="" width="500">
+    <figcaption><code>74LS107</code> 型双JK触发器的引脚排列图</figcaption>
+  </figure>
+
+  <p>对之进行测试，得到如下真值表：</p>
+
+  <table class="truth-table">
+    <thead>
+      <tr>
+        <th>\(\overline{R_D}\)</th>
+        <th>\(\overline{CP}\)</th>
+        <th>J</th>
+        <th>K</th>
+        <th>Q</th>
+        <th>\(\overline{Q}\)</th>
+        <th style="font-style: normal;">备注</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>0</td>
+        <td>1</td>
+        <td>清零</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>&darr;</td>
+        <td>0</td>
+        <td>0</td>
+        <td>\(Q_0\)</td>
+        <td>\(\overline{Q_0}\)</td>
+        <td>JK触发器，保持</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>&darr;</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>JK触发器，置位</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>&darr;</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>JK触发器，复位</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>&darr;</td>
+        <td>1</td>
+        <td>1</td>
+        <td>\(\overline{Q_0}\)</td>
+        <td>Q<sub>0</sub></td>
+        <td>JK触发器，翻转</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>Q<sub>0</sub></td>
+        <td>\(\overline{Q_0}\)</td>
+        <td>保持</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>可见，<code>74LS107</code> 型芯片中的JK触发器的功能符合我们的预期。</p>
+  <hr>
+  <h3>实验任务2：触发器功能的转换</h3>
+
+  <p>我们知道，如果要将某种功能的触发器转换成另一种功能的触发器，可以在触发器外添加适当的组合逻辑电路来实现。而组合逻辑电路的实现，应该由各种触发器的状态方程所导出。</p>
+
+  <p>给出本实验中涉及到的三种触发器的状态方程如下：</p>
+
+  <p><strong>D触发器：</strong></p>
+
+  \[Q^{n+1}=D\]
+
+  <p><strong>T′触发器：</strong></p>
+
+  \[Q^{n+1}=\overline{Q^n}\]
+
+  <p><strong>JK触发器：</strong></p>
+
+  \[Q^{n+1}=J \overline{Q^n}+\overline K Q^n\]
+
+  <p>首先考虑将D触发器转换成T′触发器。对比两者的状态方程，显然，我们只需要令D触发器的输入D是当前的反变量输出\(\overline{Q_n}\)，于是不难理解下面的接线图：</p>
+
+  <figure>
+    <img src="img/67.jpg" alt="" width="500">
+    <figcaption>D触发器转换成T′触发器的接线示意图</figcaption>
+  </figure>
+
+  <p style="color: red; font-weight: bold;">
+    上图中CP可接1Hz或2Hz信号或手动逻辑开关，未用到的\(\overline{R_D}\)和\(\overline{S_D}\)端应接电源或高电平以防干扰。</p>
+
+  <p style="color: red; font-weight: bold;">下文中涉及到的相应信号均按此要求连接，下面不再重复。</p>
+
+  <p>连接完毕以后，手动调试，记录转换后触发器的功能表格（见<a href="#title-5">实验数据记录和处理</a>部分）。</p>
+  <hr>
+  <p>接下来，我们来考虑将JK触发器转换成T′触发器。对比两者的状态方程，我们需要令\(J=K=1\)即可（或者说，T′触发器实现的功能就是JK触发器的“翻转”功能，于是不难理解\(J=K=1\)）。接线十分简单：</p>
+
+  <figure>
+    <img src="img/69.jpg" alt="" width="500">
+    <figcaption>D触发器转换成T′触发器的接线示意图</figcaption>
+  </figure>
+  <p>连接完毕以后，手动调试，记录转换后触发器的功能表格（见<a href="#title-5">实验数据记录和处理</a>部分）。</p>
+  <hr>
+  <p>最后，我们来考虑将D触发器转换成JK触发器。对比两者的状态方程，我们需要令\(D=J \overline{Q^n}+\overline K Q^n\)。由于我们没有或门，所以需要对该表达式进行处理。有如下两种处理方式：</p>
+
+  \[D=J \overline{Q^n}+\overline K Q^n=\overline{\overline{J \overline{Q^n}+\overline K Q^n}}=\overline{\overline{J
+  \overline{Q^n}}\cdot\overline{\overline K Q^n}}\]
+
+  <p>对于\(D=\overline{\overline{J \overline{Q^n}+\overline K Q^n}}\)，我们可以使用 <code>74LS55</code>
+    型<strong>与或非门集成芯片</strong>和 <code>74LS00</code>
+    型<strong>与非门集成芯片</strong>实现；对于\(D=\overline{\overline{J
+    \overline{Q^n}}\cdot\overline{\overline K Q^n}}\)，我们可以仅使用<code>74LS00</code>型<strong>与非门集成芯片</strong>实现。</p>
+
+  <p><span style="color: red; font-weight: bold;">在本实验中，我们采取\(D=\overline{\overline{J \overline{Q^n}+\overline K
+      Q^n}}\)的实现方式，按下图接线：</span>
+  </p>
+
+  <figure>
+    <img src="img/68.png" alt="" width="500">
+    <figcaption>D触发器转换成JK触发器的接线示意图</figcaption>
+  </figure>
+  <p>连接完毕以后，手动调试，记录转换后触发器的功能表格（见<a href="#title-5">实验数据记录和处理</a>部分）。</p>
+  <hr>
+  <h3>实验任务3：用双D触发器设计一个单发（次）脉冲发生器</h3>
+
+  <p>使用两个D触发器，按下图接线：</p>
+
+  <figure>
+    <img src="img/70.jpg" alt="" width="500">
+    <figcaption>用双D触发器实现单发（次）脉冲发生器接线图</figcaption>
+  </figure>
+
+  <p>
+    根据上图电路，经过分析可知，每当<strong>手控</strong>端给出一个正脉冲，在该正脉冲<strong>开始</strong>以后（即给出<strong>上边沿</strong>以后），\(Q_2\)端将给出一个正脉冲，此正脉冲的长度是<strong>系列脉冲</strong>的<strong
+      style="color: red;">一个周期</strong>的长度（而与输入的手控脉冲的长度无关）。也就是说，每当<strong>手控</strong>端给出一个正脉冲以后，该装置的输出端\(Q_2\)都会给出一个<strong
+      style="color: red;">固定长度</strong>的脉冲，这也就是该装置得名<strong>单发（次）脉冲发生器</strong>的原因。详细分析请见<a
+      href="#title-6">实验结果与分析</a>部分。
+  </p>
+
+  <p>接线完毕后，首先进行功能测试：</p>
+
+  <p><strong>手控</strong>脉冲接<strong style="color: red;">逻辑开关（而不能接触摸开关）</strong>，<strong>系列脉冲</strong>接1Hz或2Hz信号，
+    \(Q_1\)、\(Q_2\)接发光二极管，进行静态测试。
+  </p>
+
+  <p>测试无误后进行波形测试：</p>
+
+  <p>将<strong>手控</strong>脉冲和<strong>系列</strong>脉冲都接1024Hz信号，用示波器观察脉冲\(CP\)端和输出
+    \(Q_1\)端，以及输出\(Q_1\)端和输出\(Q_2\)端的波形，并分别拍照记录。</p>
+
+  <p>记录的波形图见<a href="#title-5">实验数据记录和处理</a>部分。</p>
+
+  <h2 id="title-5">五、实验数据记录和处理</h2>
+
+  <p>对于D和JK触发器转换而来的T′触发器，转换后，经过我们测试记录得到的真值表均如下：</p>
+
+  <table class="truth-table">
+    <thead>
+      <tr>
+        <th>\(\overline{CP}\)</th>
+        <th>\(Q^n\)</th>
+        <th>\(Q^{n+1}\)</th>
+        <th style="font-style: normal;">备注</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>1</td>
+        <td>0</td>
+        <td>翻转</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>0</td>
+        <td>1</td>
+        <td>翻转</td>
+      </tr>
+      <tr>
+        <td>\(\uparrow\)</td>
+        <td>1</td>
+        <td>1</td>
+        <td>保持（未激活）</td>
+      </tr>
+      <tr>
+        <td>\(\uparrow\)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>保持（未激活）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <p>对于使用D触发器转换而来的JK触发器，我们得到的真值表如下：</p>
+
+  <table class="truth-table">
+    <thead>
+      <tr>
+        <th>\(CP\)</th>
+        <th>\(\overline{K}\)</th>
+        <th>\(J\)</th>
+        <th>\(K\)</th>
+        <th>\(Q^n\)</th>
+        <th>\(Q^{n+1}\)</th>
+        <th style="font-style: normal;">备注</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>翻转</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>翻转</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>置一</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>置一</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>置零</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>置零</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>保持</td>
+      </tr>
+      <tr>
+        <td>\(\downarrow\)</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>保持</td>
+      </tr>
+      <tr>
+        <td>\(\uparrow\)</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>&times;</td>
+        <td>\(Q^n\)</td>
+        <td>\(Q^n\)</td>
+        <td>\(Q^{n+1}=Q^n\)，保持（未激活）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <p>对于单发（次）脉冲发生器，我们得到的波形图如下：</p>
+
+  <figure>
+    <img src="img/71.jpg" alt="" width="500">
+    <figcaption>单发（次）脉冲发生器波形图一<br>黄色（CH1）为\(CP\)，紫色（CH2）为\(Q_1\)</figcaption>
+  </figure>
+  <hr>
+  <figure>
+    <img src="img/72.jpg" alt="" width="500">
+    <figcaption>单发（次）脉冲发生器波形图二<br>黄色（CH1）为\(Q_1\)，紫色（CH2）为\(Q_2\)</figcaption>
+  </figure>
+  <hr>
+
+  <h2 id="title-6">六、实验结果与分析</h2>
+
+  <p>从上面的<a href="#title-5">实验数据记录和处理</a>部分，我们已经能够说明，我们的实验均产生了正确结果。</p>
+
+  <p>下面就单发（次）脉冲发生器电路的工作原理给出具体分析：</p>
+
+  <p>重新给出接线图：</p>
+
+  <figure>
+    <img src="img/70.jpg" alt="" width="500">
+    <figcaption>用双D触发器实现单发（次）脉冲发生器接线图</figcaption>
+  </figure>
+
+  <p>首先给定初态：\(Q_1=Q_2=0\)</p>
+
+  <p>当<strong>手控</strong>端给出上升沿时，\(Q_1\)将被置为1。等到<strong>系列脉冲</strong>给出上升沿时，\(Q_2\)也将被置为1，<strong
+      style="color: red;">输出脉冲开始</strong>，同时由于\(\overline{Q_2}\)为0，\(Q_1\)将被清零。由于我们的D触发器是异步清零，所以此时即使<strong>手控</strong>端再给出上升沿，\(Q_1\)也将保持为0，而无法被置为1。这种情况将一直持续到<strong>下一个系列脉冲的上升沿</strong>。当下一个<strong>系列脉冲</strong>的上升沿到来时，由于\(Q_1\)一直保持为0（一直被异步清零），\(Q_2\)将被置为0，<strong
+      style="color: red;">输出脉冲结束</strong>，同时\(\overline{Q_2}\)变为1，对于\(Q_1\)的异步清零解除，但在下一个<strong>手控</strong>端的上升沿到来之前，\(Q_1\)将一直继续保持为0。如果在下一个<strong>手控</strong>端的上升沿到来之前继续遇到<strong>系列脉冲</strong>的上升沿，由于\(Q_1\)仍然保持为0，所以本就为0的\(Q_2\)将继续被置为为0，输出状态不会改变，也就是<span
+      style="color: red;">一个<strong>手控</strong>端的上升沿只能产生<strong>一个</strong>输出脉冲</span>。而现在这个状态就又回到了初态\(Q_1=Q_2=0\)。于是整个装置继续等待下一个<strong>手控</strong>端的上边沿，直到下一个<strong>手控</strong>端的上升沿到来，整个过程将重复。
+  </p>
+
+  <p>
+    经过了上面的分析，现在让我们来总结一下：输出脉冲产生的原因是<strong>手控</strong>端给出了一个上升沿（一个<strong>脉冲</strong>），并且<span
+      style="color: red;">一个<strong>手控</strong>端的上升沿只能产生<strong>一个</strong>输出脉冲</span>，当输出为1（正在给出脉冲）时，<strong>手控</strong>端给出的脉冲无效。<strong
+      style="color: red;">输出脉冲开始</strong>的时间是<strong>系列脉冲的上升沿</strong>，<strong
+      style="color: red;">输出脉冲结束</strong>的时间是<strong>下一个系列脉冲的上升沿</strong>，所以\(Q_2\)输出保持高电平的时间（即<strong>输出脉冲的长度</strong>）是<strong>一个系列脉冲的周期</strong>。
+  </p>
+
+  <p>
+    综上所述，我们实现的单发（次）脉冲发生器的功能是：每当<strong>手控</strong>端给出一个上升沿（一个脉冲），输出端将给出一个固定长度的脉冲，输出脉冲的长度为<strong>系列脉冲</strong>的一个周期长度，在输出为1（正在输出脉冲）期间，<strong>手控</strong>端的上升沿无效。
+  </p>
+
+  <h2 id="title-7">七、讨论、心得</h2>
+
+  <p>本次实验，我们测试了触发器的功能，并做了触发器的功能转换，初步应用触发器进行了时序电路的设计并分析了简单时序电路的功能。</p>
+
+  <p>通过本次实验，我们对于基本触发器的功能有了更深入的认识，还巩固了逻辑电路的测试、调试方法并练习了波形分析。</p>
+
+</body>
+
+</html>

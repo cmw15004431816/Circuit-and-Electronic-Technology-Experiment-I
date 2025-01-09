@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--
+浏览器Ctrl+P，A4竖版，四边距离都设定为0.4"
+使用 \( \) 创建行内LaTeX公式
+使用 \[ \] 创建块级LaTeX公式
+-->
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>实验报告</title>
+  <style>
+    html {
+      width: 595px;
+      height: 842px;
+      margin: auto;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000000;
+      background-color: #FFFFFF;
+      line-height: 1.8;
+    }
+
+    .university {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .table-container {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .right-table {
+      position: absolute;
+      top: -55px;
+      right: -95px;
+      padding: 8px;
+      font-size: 14px;
+      width: 240px;
+      text-align: left;
+    }
+
+    .info-table,
+    .info-table2,
+    .info-table3,
+    .content-table {
+      width: 100%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .info-table td,
+    .info-table2 td,
+    .info-table3 td,
+    .content-table td {
+      color: #000000;
+      font-size: 18px;
+      border: none;
+    }
+
+    .info-table td:first-child {
+      width: 50%;
+    }
+
+    .info-table td:nth-child(2) {
+      width: 29%;
+    }
+
+    .info-table td:last-child {
+      width: 21%;
+      text-align: right;
+    }
+
+    .info-table2 td:first-child {
+      width: 68%;
+    }
+
+    .info-table2 td:last-child {
+      width: 32%;
+      text-align: right;
+    }
+
+    .info-table3 td:first-child {
+      width: 30%;
+    }
+
+    .info-table3 td:nth-child(2) {
+      width: 40%;
+      text-align: center;
+    }
+
+    .info-table3 td:last-child {
+      width: 30%;
+      text-align: right;
+    }
+
+    .footer {
+      text-align: right;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .content-table th,
+    .content-table td {
+      text-indent: 2em;
+      padding: 8px;
+      text-align: left;
+      color: #000000;
+      border: none;
+    }
+
+    a:link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      /*color: purple;*/
+      color: blue;
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      font-family: Courier New;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    p {
+      text-indent: 2em;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figcaption {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+  <div class="university"><img alt="Zhejiang university" src="img/report.png"></div>
+
+  <div class="table-container">
+    <h2
+      style="text-align: center; font-weight: normal; font-size: 36px; margin-top: 10px; margin-bottom: 40px; display: inline-block; position: relative;">
+      实验报告</h2>
+    <table class="right-table">
+      <tr>
+        <td>专业：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>姓名：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>学号：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>日期：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>地点：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+    </table>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td>课程名称：<u>电路与电子技术实验 I</u></td>
+      <td>指导老师：<u>xxxxxx</u></td>
+      <td>成绩：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>分</td>
+    </tr>
+  </table>
+  <table class="info-table2">
+    <tr>
+      <td>实验名称：<u>数字钟实验</u></td>
+      <td>实验类型：<u>个人实验</u></td>
+    </tr>
+  </table>
+  <table class="info-table3">
+    <tr>
+      <td>姓名：<u>xxxxxx</u></td>
+      <td>学号：<u>xxxxxxxxxxxx</u></td>
+      <td>同组学生姓名：<u>无</u></td>
+    </tr>
+  </table>
+
+  <p style="line-height: 1.8; font-size: 24px; margin-bottom: 20px;  margin-left: -50px;">目录：</p>
+  <table class="content-table">
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-1">一、实验目的和要求</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-2">二、实验内容和原理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-3">三、主要仪器设备</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-4">四、操作方法和实验步骤</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-5">五、实验数据记录和处理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-6">六、实验结果与分析</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-7">七、讨论、心得</a></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center">
+    <h1>电路与电子技术实验报告</h1>
+    <h1>实验8—数字钟实验</h1>
+  </div>
+
+  <h2 id="title-1">一、实验目的和要求</h2>
+
+  <h2>实验目的</h2>
+
+  <ol>
+    <li>体会数字逻辑电路的功能与特点。</li>
+    <li>学习用数字集成逻辑电路组装数字电路。</li>
+    <li>学习数字电路的调试方法。</li>
+  </ol>
+
+  <h2>实验要求</h2>
+
+  <ol>
+    <li>请不要带食物进入实验室，更不允许在实验室用餐；</li>
+    <li>请勿大声喧哗，不要随意走动，不要私自更换实验设备；</li>
+    <li>请听从实验指导老师的安排，独立完成实验；</li>
+    <li>实验完毕请关闭电源，万用电表用完后关闭电源归还，并摆放整齐；整理实验桌面，保持实验室整洁；</li>
+    <li>请注意用电安全，包括人身安全和设备安全；</li>
+    <li>文明实验。</li>
+  </ol>
+
+  <h2 id="title-2">二、实验内容和原理</h2>
+
+  <h2>实验内容</h2>
+
+  <ol>
+    <li>连接<code>60</code>进制计数器，用数码管显示。再用示波器观察计数器各输出端和CP脉冲的频率关系。</li>
+    <li>连接<code>24</code>进制计数器，用数码管显示，*再用示波器观察计数器各输出端和CP脉冲的频率关系。</li>
+  </ol>
+
+  <code>*为选做，本实验报告中不包含。</code>
+
+  <h2>实验原理</h2>
+
+  <p>首先明确本实验中用到的两种芯片：<strong>与非门</strong><code>74HC00</code>和<strong>规模集成计数器</strong><code>74LS161</code>，它们的引脚排列如下：</p>
+
+  <figure>
+    <img src="./img/52.jpg" alt="" width="500">
+    <figcaption>与非门74HC00的引脚排列</figcaption>
+  </figure>
+
+  <hr>
+
+  <figure>
+    <img src="./img/51.jpg" alt="" width="500">
+    <figcaption>规模集成计数器74LS161的引脚排列</figcaption>
+  </figure>
+
+  <hr>
+
+  <p><code>74LS161</code>芯片的11-14号引脚（分别记为\(Q_A、Q_B、Q_C、Q_D\)）为输出，其输出为当前计数的<strong>二进制码</strong>，11号引脚为最高位（the most
+    significant
+    bit,
+    MSB），14号引脚为最低位（the least significant bit,
+    LSB），11（\(Q_A\)）、12（\(Q_B\)）、13（\(Q_C\)）、14（\(Q_D\)）号引脚分别表示<strong>从高到低</strong>的4位输出二进制码。此外还需要注意的是（图中已经标出），<code>74LS161</code>芯片的<strong>时钟</strong>是<strong
+      style="color: red;">上边沿触发</strong>，<strong>清零</strong>则是<strong style="color: red;">下边沿触发</strong>。</p>
+
+  <p>除了上述两种芯片以外，我们还用到了七段数码管作为可视化输出。每个七段数码管接受四个输入D、C、B、A，管内置电路将上四个输入经过<strong
+      style="color: red;">8-4-2-1码</strong>方式静态译码后在管上显示对应的数字（D对应高位8，C对应4，B对应2，A对应1，如输入1001数码管显示5）。</p>
+
+  <p>
+    注意计数器的输出是<strong>二进制码</strong>，七段数码管的输入为<strong>8-4-2-1码</strong>，两者仅在0-9范围内相同。如果你将计数器输出的大于9的结果接入数码管的输入，由于此时的二进制码是<strong>无效的</strong>8-4-2-1码，故七段数码管将熄灭（如输入1101数码管将熄灭）。
+  </p>
+
+  <p>有了上面的理论基础，现在我们可以开始讨论<code>24</code>进制计数器和<code>60</code>进制计数器了。</p>
+
+  <p>
+    无论是哪种计数器，它都由一个<strong>个位</strong>和一个<strong>十位</strong>构成，且个位都是一个<strong>十进制计数器</strong>。对于<code>24</code>进制计数器，计满<code>24</code>后个位十位全部清零；对于<code>60</code>进制计数器，计满<code>60</code>后个位十位全部清零。
+  </p>
+
+  <p>下面先讨论<code>60</code>进制计数器。</p>
+
+  <p>先看个位，它是一个十进制计数器，逢十进一。而个位每进一，十位就要计一，同时个位清零；十位相当于是一个<code>6</code>进制计数器，计到6时就将十位清零。</p>
+
+  <p>
+    由于十位的计数只能由个位的进位所导致，而个位每次发生进位，都会将自身清零，所以对于<code>60</code>进制计数器，当十位计到<code>6</code>的时候，只需要对十位本身进行清零即可，不需要对个位进行处理，因为个位一定已经被自己清零了。这一点和下面将要讨论的<code>24</code>进制计数器不同。
+  </p>
+
+  <p>
+    最后总结一下<code>60</code>进制计数器的实现方法：用到个位和十位两个<code>74LS161</code>芯片，个位的时钟引脚接实验箱时钟信号，每当个位输出变成<code>10</code>的时候，给自己的清除引脚一个下边沿实现清零，同时给十位的时钟引脚一个上边沿，触发十位计数一次。当十位的输出变成<code>6</code>的时候，给十位的清除引脚一个下边沿实现十位清零。个位和十位的输出分别接到七段数码管上。至此完成了用七段数码管输出的<code>60</code>进制计数器。
+  </p>
+
+  <p>以<code>60</code>进制计数器为基础，让我们来讨论<code>24</code>进制计数器。</p>
+
+  <p>
+    个位仍然是一个十进制计数器，但十位不同（绝不能想当然地认为是相当于一个二进制计数器）。个位逢十进一，自身清零。除此之外，当十位计到<code>2</code>，<strong>并且</strong>个位计到<code>4</code>的时候，对个位和十位<strong>同时</strong>清零。你会发现，个位的清零有两种情况（自身满<code>10</code>或当前计到<code>24</code>），十位的清零有一种情况（当前计到<code>24</code>），并且，当前计到<code>24</code>的清零，它并不仅仅依赖于单独的个位或者十位，而是由个位和十位共同决定。这使得<code>24</code>进制计数器要比<code>60</code>进制计数器稍显复杂。但是，理清了上述清零的情况以后，我们也就可以来总结<code>24</code>进制计数器的实现方法了。
+  </p>
+
+  <p>
+    <code>24</code>进制计数器的实现方法总结：个位和十位使用的芯片与<code>60</code>进制计数器相同。个位的时钟引脚依然接实验箱的时钟信号，个位的清除引脚接以下两种情况的<strong>或</strong>：个位输出变成<code>10</code>，<strong>或者</strong>，十位输出<code>2</code>，并且同时个位输出<code>4</code>——只要这两种情况至少发生其一（实际上，根据我们的实现逻辑，它们可能且只可能发生其一，所以这里使用<strong>或</strong>逻辑与使用<strong>异或</strong>逻辑理论上应该能得到相同的实现结果，但是本次实验中我们采用<strong>或</strong>逻辑，原因见<a
+      href="#reason">下文</a>），我们就给个位的清除引脚一个下边沿（注意，最终给出这个下边沿，是靠一个<strong style="color: red;">与门</strong>或者一个<strong
+      style="color: red;">同或（异或非）门</strong>来实现的，详见<a
+      href="#reason">下文</a>。上面所说的是<strong>逻辑</strong>，并不是具体实现时真正使用的门的种类）。每当个位输出变成<code>10</code>的时候。给十位的时钟引脚一个上边沿，触发十位计数一次。当十位输出<code>2</code>，并且同时个位输出<code>4</code>的时候，给十位的清除引脚一个下边沿实现十位清零（当然，如前文所述，此时也给了个位的清零引脚一个下边沿实现了个位清零）。个位和十位的输出分别接到七段数码管上。至此就完成了用七段数码管输出的<code>24</code>进制计数器。
+  </p>
+
+  <p>
+    上文中，我们一直在说“给”一个引脚一个下边沿或者上边沿。那怎么“给”这个上/下边沿呢？我们使用<strong>与非门</strong><code>74HC00</code>实现。首先来说下边沿，比如，当个位输出<code>10</code>的时候，我们想给出一个下边沿，那么我们就把\(Q_B\)和\(Q_D\)作为与非门的两个输入，则该与非门的输出将在——\(Q_B\)和\(Q_D\)都变成<code>1</code>，对应到计数器，就是当该计数器（的个位）从<code>9</code>计到<code>10</code>——的那一刹那由<code>1</code>变为<code>0</code>，即给出了一个下边沿。那么怎么给出上边沿呢？一个十分简单的思路当然是使用非门和与非门实现，不改变上述与非门的输入，只需要将与非门的结果通过非门，产生的下边沿就变成了上边沿。但是，这种实现并没有被本次实验所采用，<span
+      id="reason">原因如下：首先，本实验<strong>不允许使用</strong>除了与非门之外的其他任何逻辑门，<del>尽管事实上我们有</del>（这也决定了，我们上文提到的<strong>或</strong>逻辑也必须使用与非门实现，详见<a
+        href="#reason-1">下文</a>）</span>，此外，我们本次实验使用的是<strong>异步时钟（asynchronous
+      clock）</strong>，尽管与非门是<strong>功能完备（functional complete）门</strong>，我们可以用与非门实现任何<strong>基本逻辑门（basic logic
+      gates）</strong>，当然也包括非门，但这可能会增加<strong>门输入代价（gate
+      cost）</strong>，并会使我们的电路更加复杂且低效，而且加入非门带来的<strong>门延时（gate
+      delay）</strong>将可能导致结果错误。我们完全可以修改与非门的输入，从而在相应时刻产生我们需要的上边沿。仍然考虑当个位输出<code>10</code>的时候，此时我们想给出一个上边沿。注意到，在我们本次实现的计数器中，上边沿和下边沿总是成对出现（因为一个信号发生改变之后总还要恢复到原来的值），所以我们可以考虑<strong>提前产生一个下边沿并将之舍弃</strong>，然后<strong>接收信号恢复时的上边沿</strong>。所以，我们此时可以把\(Q_A\)和\(Q_D\)作为与非门的两个输入，则该与非门的输出将在——\(Q_A\)和\(Q_D\)都变成<code>1</code>，对应到计数器，就是当该计数器（的个位）从<code>8</code>计到<code>9</code>——的那一刹那由<code>1</code>变为<code>0</code>，即给出了一个下边沿（和上文一样）。但我们并不关心下边沿，于是考虑下一步计数：与非门的输出将在——该计数器（的个位）从<code>9</code>计到<code>10</code>，也就是\(Q_D\)保持<code>1</code>，\(Q_A\)从<code>1</code>变成<code>0</code>——的那一刹那由<code>0</code>变为<code>1</code>，即在计数器输出<code>10</code>的时候给出了一个上边沿。这样，仅仅是改变了电路的连接方式，我们就实现了产生上升沿，并且不会有门延时和门输入代价的问题。
+  </p>
+
+  <p id="reason-1">上面我们已经说过，要使用与非门实现<strong style="color: red;">与门</strong>，那么如何实现呢？这需要一点点的<strong>布尔代数（Boolean
+      algebra）</strong>知识。我不会在这里讲布尔代数，直接给出结果如下：
+  </p>
+
+  \[ A \text{ AND } B = (A \text{ NAND } B) \text{ NAND } (A \text{ NAND } B) \]
+
+  <p>上文还说过，使用<strong style="color: red;">同或（异或非）门</strong>和使用<strong
+      style="color: red;">与门</strong>将产生同样结果，让我们考虑<strong>用与非门实现同或门</strong>：</p>
+
+  \[ A \text{ XNOR } B = ((A \text{ NAND } (A \text{ NAND } B)) \text{ NAND } \\ (B \text{ NAND } (A \text{ NAND } B)))
+  \text{ NAND } ((A \text{ NAND } (A \text{ NAND } B)) \text{ NAND } \\ (B \text{ NAND } (A \text{ NAND } B))) \]
+
+  <p>
+    两种门的实现的复杂程度高下立判。同或门的电路级数高，门输入延迟也更高。我们没有必要放弃简单的与门不用，非要去用更加复杂的同或门。至此就解释了，我们的实验中为什么用的是或逻辑（与门）而不是异或逻辑（同或门）。
+  </p>
+
+  <p>对于只有1位的信号（比如我们本实验中的信号），我们可以将之与<code>1</code>(逻辑高电平)与非，得到它的反，也就是说，我们可以这样，实际上在本实验中也就是这样实现与门（下面的A、B只能是一位的信号）：</p>
+
+  \[ A \text{ AND } B = (A \text{ NAND } B) \text{ NAND } 1_{logic} \]
+
+  <p>到此为止，本次实验的原理就已经阐释的十分清楚了。</p>
+
+  <h2 id="title-3">三、主要仪器设备</h2>
+
+  <p>数字逻辑电路实验箱以及<code>74HC00</code>、<code>74LS161</code>芯片。</p>
+
+  <h2 id="title-4">四、操作方法和实验步骤</h2>
+
+  <p>按下图连接<code>60</code>进制计数器的电路：</p>
+
+  <figure>
+    <img src="./img/53.jpg" alt="" width="500">
+    <figcaption>60进制计数器接线图</figcaption>
+  </figure>
+
+  <p>图中所有与非门均用<code>74HC00</code>芯片实现。</p>
+
+  <p>
+    所有<code>74HC00</code>芯片的14号引脚都接5V电压输出，7号引脚都接地；所有<code>74LS161</code>芯片的16号引脚都接5V电压输出，8号引脚都接地，7、9、10号引脚都接5V高电平，\(Q_A、Q_B、Q_C、Q_D\)分别接七段数码管的A、B、C、D。图示秒脉冲输入先接2Hz电压输出，然后即可在七段数码管上观察到计数效果。观察到结果正确后，调整秒脉冲输入接到1024Kz，然后使用示波器分别测量<strong>个位芯片</strong>的\(CP\)（秒脉冲输入）和\(Q_A\)，
+    \(Q_A\)和\(Q_B\) ， \(Q_B\)和\(Q_C\) ， \(Q_C\)和\(Q_D\)的波形图并拍照留存。
+  </p>
+
+  <p>然后按下图连接<code>24</code>进制计数器的电路：</p>
+
+  <figure>
+    <img src="./img/54.jpg" alt="" width="500">
+    <figcaption>24进制计数器接线图</figcaption>
+  </figure>
+
+  <p>
+    依然是所有<code>74HC00</code>芯片的14号引脚都接5V电压输出，7号引脚都接地；所有<code>74LS161</code>芯片的16号引脚都接5V电压输出，8号引脚都接地，7、9、10号引脚都接5V高电平，\(Q_A、Q_B、Q_C、Q_D\)分别接七段数码管的A、B、C、D。图示秒脉冲输入先接2Hz电压输出，然后即可在七段数码管上观察到计数效果。
+  </p>
+
+  <p>最后，给出一张实验时连接的实际电路：</p>
+
+  <figure>
+    <img src="./img/55.jpeg" alt="" width="500">
+    <figcaption>24进制计数器</figcaption>
+  </figure>
+
+  <h2 id="title-5">五、实验数据记录和处理</h2>
+
+  <p>本实验没有实验数据，无需进行处理。</p>
+
+  <p>下面给出实验时记录的<strong>个位芯片</strong>的波形图：</p>
+
+  <figure>
+    <img src="./img/56.jpeg" alt="" width="500">
+    <figcaption>\(CP\)（秒脉冲输入）和\(Q_A\)的波形图<br>黄色（CH1）为\(CP\)，紫色（CH2）为\(Q_A\)</figcaption>
+  </figure>
+
+  <hr>
+
+  <figure>
+    <img src="./img/57.jpeg" alt="" width="500">
+    <figcaption>\(Q_A\)和\(Q_B\)的波形图<br>黄色（CH1）为\(Q_A\)，紫色（CH2）为\(Q_B\)</figcaption>
+  </figure>
+
+  <hr>
+
+  <figure>
+    <img src="./img/58.jpeg" alt="" width="500">
+    <figcaption>\(Q_B\)和\(Q_C\)的波形图<br>黄色（CH1）为\(Q_B\)，紫色（CH2）为\(Q_C\)</figcaption>
+  </figure>
+
+  <hr>
+
+  <figure>
+    <img src="./img/59.jpeg" alt="" width="500">
+    <figcaption>\(Q_C\)和\(Q_D\)的波形图<br>黄色（CH1）为\(Q_C\)，紫色（CH2）为\(Q_D\)</figcaption>
+  </figure>
+
+  <h2 id="title-6">六、实验结果与分析</h2>
+
+  <p>对<code>60</code>进制计数器的个位芯片的输出波形进行仿真，可得到如下的理论波形：</p>
+
+  <figure>
+    <img src="./img/60.jpg" alt="" width="500">
+    <figcaption>\(CP、Q_A\)（图中\(Q_0\)）、\(Q_B\)（图中\(Q_1\)）、<br>\(Q_C\)（图中\(Q_2\)）、\(Q_D\)（图中\(Q_3\)）的理论波形（仿真结果）
+    </figcaption>
+  </figure>
+
+  <p>这与我们的示波器测量结果相符合。这也证明了我们实验的正确性。</p>
+
+  <h2 id="title-7">七、讨论、心得</h2>
+
+  <p>
+    由于已经学过数字逻辑电路的有关知识，并且已经进行过相关实验，所以本次实验对我而言十分简单。由于我首次学习数字电路知识时使用的语言是英文而非中文，所以在本文中，某些专有名词的中文翻译可能不可靠，我均用括号注明了其对应的英文，<strong>请以英文为准</strong>。
+  </p>
+
+  <p>在本次实验中，我温习了以前的知识，并加深了自己的理解。实验带给了我很大的成就感。</p>
+
+</body>
+
+</html>

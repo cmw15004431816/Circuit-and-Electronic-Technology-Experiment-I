@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<!--
+浏览器Ctrl+P，A4竖版，四边距离都设定为0.4"
+使用 \( \) 创建行内LaTeX公式
+使用 \[ \] 创建块级LaTeX公式
+-->
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>实验报告</title>
+  <style>
+    html {
+      width: 595px;
+      height: 842px;
+      margin: auto;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000000;
+      background-color: #FFFFFF;
+      line-height: 1.8;
+    }
+
+    .university {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .table-container {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .right-table {
+      position: absolute;
+      top: -55px;
+      right: -95px;
+      padding: 8px;
+      font-size: 14px;
+      width: 240px;
+      text-align: left;
+    }
+
+    .info-table,
+    .info-table2,
+    .info-table3,
+    .content-table {
+      width: 100%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .info-table td,
+    .info-table2 td,
+    .info-table3 td,
+    .content-table td {
+      color: #000000;
+      font-size: 18px;
+      border: none;
+    }
+
+    .info-table td:first-child {
+      width: 50%;
+    }
+
+    .info-table td:nth-child(2) {
+      width: 29%;
+    }
+
+    .info-table td:last-child {
+      width: 21%;
+      text-align: right;
+    }
+
+    .info-table2 td:first-child {
+      width: 68%;
+    }
+
+    .info-table2 td:last-child {
+      width: 32%;
+      text-align: right;
+    }
+
+    .info-table3 td:first-child {
+      width: 30%;
+    }
+
+    .info-table3 td:nth-child(2) {
+      width: 40%;
+      text-align: center;
+    }
+
+    .info-table3 td:last-child {
+      width: 30%;
+      text-align: right;
+    }
+
+    .footer {
+      text-align: right;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .content-table th,
+    .content-table td {
+      text-indent: 2em;
+      padding: 8px;
+      text-align: left;
+      color: #000000;
+      border: none;
+    }
+
+    a:link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      /*color: purple;*/
+      color: blue;
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      font-family: Courier New;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    p {
+      text-indent: 2em;
+    }
+
+    .data {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      justify-content: center;
+    }
+
+    .data th,
+    .data td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .data td.diagonalRising {
+      background: linear-gradient(to right bottom, #ffffff 0%, #ffffff 49.9%, #000000 50%, #000000 51%, #ffffff 51.1%, #ffffff 100%);
+    }
+
+    .data td.diagonal {
+      background: linear-gradient(to right top, #ffffff 0%, #ffffff 49.9%, #000000 50%, #000000 51%, #ffffff 51.1%, #ffffff 100%);
+    }
+
+    .data td.diagonalCross {
+      position: relative;
+      background: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 49.9%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 51%, rgba(0, 0, 0, 0) 51.1%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .data td.diagonalCross:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(to right top, #ffffff 0%, #ffffff 49.9%, #000000 50%, #000000 51%, #ffffff 51.1%, #ffffff 100%);
+    }
+
+    .data th {
+      background-color: #f2f2f2;
+    }
+
+    .data tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figcaption {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+  <div class="university"><img alt="Zhejiang university" src="img/report.png"></div>
+
+  <div class="table-container">
+    <h2
+      style="text-align: center; font-weight: normal; font-size: 36px; margin-top: 10px; margin-bottom: 40px; display: inline-block; position: relative;">
+      实验报告</h2>
+    <table class="right-table">
+      <tr>
+        <td>专业：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>姓名：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>学号：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>日期：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+      <tr>
+        <td>地点：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+      </tr>
+    </table>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td>课程名称：<u>电路与电子技术实验 I</u></td>
+      <td>指导老师：<u>xxxxxx</u></td>
+      <td>成绩：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>分</td>
+    </tr>
+  </table>
+  <table class="info-table2">
+    <tr>
+      <td>实验名称：<u>调谐电路功效的研究</u></td>
+      <td>实验类型：<u>个人实验</u></td>
+    </tr>
+  </table>
+  <table class="info-table3">
+    <tr>
+      <td>姓名：<u>xxxxxx</u></td>
+      <td>学号：<u>xxxxxxxxxxxx</u></td>
+      <td>同组学生姓名：<u>无</u></td>
+    </tr>
+  </table>
+
+  <p style="line-height: 1.8; font-size: 24px; margin-bottom: 20px;  margin-left: -50px;">目录：</p>
+  <table class="content-table">
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-1">一、实验目的和要求</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-2">二、实验内容和原理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-3">三、主要仪器设备</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-4">四、操作方法和实验步骤</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-5">五、实验数据记录和处理</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-6">六、实验结果与分析</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px;"><a href="#title-7">七、讨论、心得</a></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center">
+    <h1>电路与电子技术实验报告</h1>
+    <h1>实验6—调谐电路功效的研究</h1>
+  </div>
+
+  <h2 id="title-1">一、实验目的和要求</h2>
+
+  <h2>实验目的</h2>
+  <ol>
+    <li>掌握谐振频率及品质因素的测量方法；</li>
+    <li>掌握实验曲线的测量与作图技巧；</li>
+    <li>加深对谐振电路频率特性的认识；</li>
+    <li>了解谐振电路的选频特性、通频带及其应用；</li>
+    <li>*（选做，本实验报告中不包含）了解示波器直接测量频率特性的方法。</li>
+  </ol>
+  <h2>实验要求</h2>
+
+  <ol>
+    <li>请不要带食物进入实验室，更不允许在实验室用餐；</li>
+    <li>请勿大声喧哗，不要随意走动，不要私自更换实验设备；</li>
+    <li>请听从实验指导老师的安排，独立完成实验；</li>
+    <li>实验完毕请关闭电源，万用电表用完后关闭电源归还，并摆放整齐；整理实验桌面，保持实验室整洁；</li>
+    <li>请注意用电安全，包括人身安全和设备安全；</li>
+    <li>文明实验。</li>
+  </ol>
+
+  <h2 id="title-2">二、实验内容和原理</h2>
+
+  <h2>实验内容</h2>
+  <ol>
+    <li>\(R=1000\,\Omega\)，保持\(U_S\)幅值基本不变，测量\(U_R\)、\(U_L\)、\(U_C\)和\(U_S\)，数据记入表格。测定传递函数的幅频特性；</li>
+    <li>\(R=100\,\Omega\)，再测\(U_R\)幅频特性，画出曲线，与内容\(1\)比较，观察品质因素\(Q\)与幅频特性曲线的关系；</li>
+    <li>\(R=100\,\Omega\)和\(R=1000\,\Omega\)，通过\(U_R\)幅频特性计算带宽（通频带），品质因数，并与理论值相比较；</li>
+    <li>*（选做，本实验报告中不包含）用示波器直接测量\(R=1000\,\Omega\)时，电阻、电容、电感的波特图（幅频特性和相频特性）；</li>
+    <li>电路输入端\(U_S\)接方波信号源。调节\(R\)，观测\(U_R\)波形, 什么条件下能够得到较理想的正弦波？记录该条件。并说明理由。</li>
+  </ol>
+  <h2>实验原理</h2>
+  <p>由电阻、电感器和电容器串联组成的一端口网络，其等效复阻抗为：</p>
+  \[Z=(R+R_L)+j(\omega L-\frac{1}{\omega C})\]
+  <p>当\(R\)、\(L\)、\(C\)串联电路的\(\omega\)满足\(\displaystyle\omega L=\frac{1}{\omega C}\)时，电路发生串联谐振，此时的谐振频率</p>
+  \[f_0=\frac{1}{2\pi\sqrt{LC}}.\]
+  <p>串联谐振，由于电感\(L\)中带有电阻，此谐振有如下特点：</p>
+  <ol style="margin-left: 2em;">
+    <li>电压与电流同相位；</li>
+    <li>端口电流最大。</li>
+  </ol>
+  <p>我们采用上述特点\(1\)来判断电路是否发生谐振。</p>
+  <p>当激励源频率变化时，响应随激励频率变化而变化，这一变化关系称为称为电路的<strong>频率特性</strong>。传递函数的模随频率的变化关系称为<strong>幅频特性</strong>。</p>
+  <figure>
+    <img src="img/27.png" alt="" width="500">
+    <figcaption>频率特性曲线</figcaption>
+  </figure>
+  <figure>
+    <img src="img/28.jpg" alt="" width="500">
+    <figcaption>通用谐振曲线</figcaption>
+  </figure>
+  \[Q=\frac{U_{L0}}{U}=\frac{\omega_0L}{R}=\frac{1}{\omega_0RC}=\frac{\rho}{R}=\frac{1}{R}\sqrt{\frac{L}{C}}\]
+  \[BW=\omega_2-\omega_1=\frac{\omega_0}{Q}=\frac{R}{L}\]
+  \[Q=\frac{\omega_0}{\omega_2-\omega_1}=\frac{\omega_0}{BW}\]
+  <h2 id="title-3">三、主要仪器设备</h2>
+  <ol>
+    <li>电工综合实验台；</li>
+    <li>信号发生器；</li>
+    <li>双通道示波器。</li>
+  </ol>
+  <h2 id="title-4">四、操作方法和实验步骤</h2>
+  <p>按下图接线：</p>
+  <figure>
+    <img src="img/29.png" alt="" width="500">
+    <figcaption>\(RLC\)串联谐振接线举例</figcaption>
+  </figure>
+  <p>正式测量开始之前，先用万用表粗测电感电阻\(R_L=74.1\ \Omega\)，理论谐振频率\(\displaystyle f_{0理论}=\frac{1}{2\pi\sqrt{LC}}\approx
+    2516.460605\mathrm{Hz}\)。</p>
+  <p>
+    然后在\(f_{0理论}\)附近寻找真实的谐振频率\(f_0\)。调节端口电压\(U_S\)和电流同相位，由于电流的相位和电阻电压\(U_R\)的相位相同，故使用示波器测量\(U_S\)和\(U_R\)，调节信号发生器的频率使得二者相位相同。
+  </p>
+  <p>调节之后的结果如下图所示：</p>
+  <figure>
+    <img src="img/30.jpeg" alt="" width="500">
+    <figcaption>调节\(U_R\)和\(U_S\)同相位（Y-T模式）<br>黄色CH1是\(U_R\)，紫色CH2是\(U_S\)</figcaption>
+  </figure>
+  <p>切换成X-Y模式检验，结果如下图：</p>
+  <figure>
+    <img src="img/31.jpeg" alt="" width="500">
+    <figcaption>调节\(U_R\)和\(U_S\)同相位（X-Y模式）</figcaption>
+  </figure>
+  <p>X-Y模式下，图线为一条直线，表示\(U_R\)和\(U_S\)同相位。记录下此时的信号发生器发出的频率，即为谐振频率。</p>
+  <p>我们测得谐振频率\(f_0=2440.671\mathrm{Hz}\)。</p>
+  <p>下面正式开始测量。</p>
+  <p>首先置\(R=1000\,\Omega\)，改变信号发生器输出的频率，用<strong
+      style="color: red;">示波器</strong>测量\(U_R\)、\(U_L\)、\(U_C\)和\(U_S\)，并将数据记入表格。</p>
+  <p style="color: red;">
+    注意，在本次实验中，测量电压时<strong>不能</strong>使用万用表或实验台的交流电压表。原因是，实验室万用表交流电压挡位和实验台的交流电压表的工作频率都是\(50\,\mathrm{Hz}\)，而本次实验所用的交流电的频率显然不是\(50\,\mathrm{Hz}\)（更不必说本实验中还一直在改变频率），用上述两个表测出的结果是错误的。
+  </p>
+  <p>然后换\(R=100\,\Omega\)，再测\(U_R\)。</p>
+  <p>最后将信号发生器调成方波模式，频率为谐振频率，将\(R\)换成可调电阻并调节\(R\)，使用示波器显示\(U_R\)波形并持续观测其波形。当\(U_R\)波形接近理想正弦波形时，记录波形和此时\(R\)的大小。</p>
+  <h2 id="title-5">五、实验数据记录和处理</h2>
+  \[R_L=74.1\ \Omega\]
+  \[f_{0理论}\approx 2516.460605\ \mathrm{Hz}\]
+  \[f_0=2440.671\ \mathrm{Hz}\]
+  \[L=40\ \mathrm{mH}\]
+  \[C=0.1\ \mathrm{\mu F}\]
+  <table class="data">
+    <caption>\(R=1000\ \Omega\)时的\(U_R\)、\(U_L\)、\(U_C\)和\(U_S\)的<strong>有效值</strong></caption>
+    <tbody>
+      <tr>
+        <th>\(f(\mathrm{Hz})\)</th>
+        <th>\(U_S(\mathrm{V})\)</th>
+        <th>\(U_L(\mathrm{V})\)</th>
+        <th>\(U_C(\mathrm{V})\)</th>
+        <th>\(U_R(\mathrm{V})\)</th>
+        <th>\(U_{LC}(\mathrm{V})\)</th>
+      </tr>
+      <tr>
+        <td>\(176.667\ \mathrm{Hz}\)</td>
+        <td>\(1.80\ \mathrm{V}\)</td>
+        <td>\(0.1234\ \mathrm{V}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(0.1982\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(353.335\ \mathrm{Hz}\)</td>
+        <td>\(1.76\ \mathrm{V}\)</td>
+        <td>\(0.1424\ \mathrm{V}\)</td>
+        <td>\(1.73\ \mathrm{V}\)</td>
+        <td>\(0.3894\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(530.002\ \mathrm{Hz}\)</td>
+        <td>\(1.76\ \mathrm{V}\)</td>
+        <td>\(0.1762\ \mathrm{V}\)</td>
+        <td>\(1.80\ \mathrm{V}\)</td>
+        <td>\(0.5715\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(706.669\ \mathrm{Hz}\)</td>
+        <td>\(1.74\ \mathrm{V}\)</td>
+        <td>\(0.1930\ \mathrm{V}\)</td>
+        <td>\(1.67\ \mathrm{V}\)</td>
+        <td>\(0.7477\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(883.336\ \mathrm{Hz}\)</td>
+        <td>\(1.76\ \mathrm{V}\)</td>
+        <td>\(0.2489\ \mathrm{V}\)</td>
+        <td>\(1.63\ \mathrm{V}\)</td>
+        <td>\(0.9037\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(1060.004\ \mathrm{Hz}\)</td>
+        <td>\(1.73\ \mathrm{V}\)</td>
+        <td>\(0.3055\ \mathrm{V}\)</td>
+        <td>\(1.59\ \mathrm{V}\)</td>
+        <td>\(1.05\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr style="color: rgb(102,203,245);">
+        <td>\(f_{c1} = 1236.671\ \mathrm{Hz}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(0.4195\ \mathrm{V}\)</td>
+        <td>\(1.57\ \mathrm{V}\)</td>
+        <td>\(1.17\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(1370.449\ \mathrm{Hz}\)</td>
+        <td>\(1.68\ \mathrm{V}\)</td>
+        <td>\(0.4731\ \mathrm{V}\)</td>
+        <td>\(1.44\ \mathrm{V}\)</td>
+        <td>\(1.25\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(1504.227\ \mathrm{Hz}\)</td>
+        <td>\(1.76\ \mathrm{V}\)</td>
+        <td>\(0.5815\ \mathrm{V}\)</td>
+        <td>\(1.44\ \mathrm{V}\)</td>
+        <td>\(1.35\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(1638.004\ \mathrm{Hz}\)</td>
+        <td>\(1.77\ \mathrm{V}\)</td>
+        <td>\(0.6630\ \mathrm{V}\)</td>
+        <td>\(1.39\ \mathrm{V}\)</td>
+        <td>\(1.44\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(1771.782\ \mathrm{Hz}\)</td>
+        <td>\(1.73\ \mathrm{V}\)</td>
+        <td>\(0.7290\ \mathrm{V}\)</td>
+        <td>\(1.29\ \mathrm{V}\)</td>
+        <td>\(1.45\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(1905.560\ \mathrm{Hz}\)</td>
+        <td>\(1.70\ \mathrm{V}\)</td>
+        <td>\(0.7850\ \mathrm{V}\)</td>
+        <td>\(1.20\ \mathrm{V}\)</td>
+        <td>\(1.45\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(2039.338\ \mathrm{Hz}\)</td>
+        <td>\(1.70\ \mathrm{V}\)</td>
+        <td>\(0.8485\ \mathrm{V}\)</td>
+        <td>\(1.16\ \mathrm{V}\)</td>
+        <td>\(1.48\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(2173.115\ \mathrm{Hz}\)</td>
+        <td>\(1.69\ \mathrm{V}\)</td>
+        <td>\(0.9050\ \mathrm{V}\)</td>
+        <td>\(1.11\ \mathrm{V}\)</td>
+        <td>\(1.52\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(2306.893\ \mathrm{Hz}\)</td>
+        <td>\(1.67\ \mathrm{V}\)</td>
+        <td>\(0.9495\ \mathrm{V}\)</td>
+        <td>\(1.05\ \mathrm{V}\)</td>
+        <td>\(1.52\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr style="color: red;">
+        <td>\(f_0 = 2440.671\ \mathrm{Hz}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(1.03\ \mathrm{V}\)</td>
+        <td>\(1.03\ \mathrm{V}\)</td>
+        <td>\(1.58\ \mathrm{V}\)</td>
+        <td>\(0.1525\ \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(2750.227\ \mathrm{Hz}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(1.15\ \mathrm{V}\)</td>
+        <td>\(0.8924\ \mathrm{V}\)</td>
+        <td>\(1.54\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(3059.782\ \mathrm{Hz}\)</td>
+        <td>\(1.67\ \mathrm{V}\)</td>
+        <td>\(1.21\ \mathrm{V}\)</td>
+        <td>\(0.7590\ \mathrm{V}\)</td>
+        <td>\(1.46\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(3369.338\ \mathrm{Hz}\)</td>
+        <td>\(1.71\ \mathrm{V}\)</td>
+        <td>\(1.31\ \mathrm{V}\)</td>
+        <td>\(0.6874\ \mathrm{V}\)</td>
+        <td>\(1.42\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(3678.893\ \mathrm{Hz}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(1.38\ \mathrm{V}\)</td>
+        <td>\(0.6008\ \mathrm{V}\)</td>
+        <td>\(1.39\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(3988.449\ \mathrm{Hz}\)</td>
+        <td>\(1.71\ \mathrm{V}\)</td>
+        <td>\(1.42\ \mathrm{V}\)</td>
+        <td>\(0.5263\ \mathrm{V}\)</td>
+        <td>\(1.32\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(4298.004\ \mathrm{Hz}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(1.47\ \mathrm{V}\)</td>
+        <td>\(0.4735\ \mathrm{V}\)</td>
+        <td>\(1.27\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(4607.560\ \mathrm{Hz}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(1.49\ \mathrm{V}\)</td>
+        <td>\(0.4246\ \mathrm{V}\)</td>
+        <td>\(1.21\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(4917.115\ \mathrm{Hz}\)</td>
+        <td>\(1.72\ \mathrm{V}\)</td>
+        <td>\(1.52\ \mathrm{V}\)</td>
+        <td>\(0.3765\ \mathrm{V}\)</td>
+        <td>\(1.17\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr style="color: rgb(102,203,245);">
+        <td>\(f_{c2} = 5226.671\ \mathrm{Hz}\)</td>
+        <td>\(1.71\ \mathrm{V}\)</td>
+        <td>\(1.54\ \mathrm{V}\)</td>
+        <td>\(0.3417\ \mathrm{V}\)</td>
+        <td>\(1.12\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(5908.575\ \mathrm{Hz}\)</td>
+        <td>\(1.63\ \mathrm{V}\)</td>
+        <td>\(1.67\ \mathrm{V}\)</td>
+        <td>\(0.2753\ \mathrm{V}\)</td>
+        <td>\(1.03\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(6590.479\ \mathrm{Hz}\)</td>
+        <td>\(1.68\ \mathrm{V}\)</td>
+        <td>\(1.68\ \mathrm{V}\)</td>
+        <td>\(0.2324\ \mathrm{V}\)</td>
+        <td>\(0.9533\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(7272.383\ \mathrm{Hz}\)</td>
+        <td>\(1.74\ \mathrm{V}\)</td>
+        <td>\(1.63\ \mathrm{V}\)</td>
+        <td>\(0.1891\ \mathrm{V}\)</td>
+        <td>\(0.8443\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(7594.288\ \mathrm{Hz}\)</td>
+        <td>\(1.74\ \mathrm{V}\)</td>
+        <td>\(1.60\ \mathrm{V}\)</td>
+        <td>\(0.1715\ \mathrm{V}\)</td>
+        <td>\(0.8001\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(8636.192\ \mathrm{Hz}\)</td>
+        <td>\(1.73\ \mathrm{V}\)</td>
+        <td>\(1.66\ \mathrm{V}\)</td>
+        <td>\(0.1319\ \mathrm{V}\)</td>
+        <td>\(0.7282\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(9318.096\ \mathrm{Hz}\)</td>
+        <td>\(1.77\ \mathrm{V}\)</td>
+        <td>\(1.74\ \mathrm{V}\)</td>
+        <td>\(0.1157\ \mathrm{V}\)</td>
+        <td>\(0.6762\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+      <tr>
+        <td>\(10000.000\ \mathrm{Hz}\)</td>
+        <td>\(1.78\ \mathrm{V}\)</td>
+        <td>\(1.76\ \mathrm{V}\)</td>
+        <td>\(0.1004\ \mathrm{V}\)</td>
+        <td>\(0.6253\ \mathrm{V}\)</td>
+        <td class="diagonal"></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="data">
+    <caption>\(R=100\ \Omega\)时的\(U_R\)的<strong>有效值</strong>，\(U_S\)有效值取\(1.77\ \mathrm{V}\)</caption>
+    <tbody>
+      <tr>
+        <th>\(f(\mathrm{Hz})\)</th>
+        <th>\(U_R(\mathrm{V})\)</th>
+      </tr>
+      <tr>
+        <td>\(176.667 \, \mathrm{Hz}\)</td>
+        <td>\(0.0897 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(353.335 \, \mathrm{Hz}\)</td>
+        <td>\(0.0904 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(530.002 \, \mathrm{Hz}\)</td>
+        <td>\(0.1258 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(706.669 \, \mathrm{Hz}\)</td>
+        <td>\(0.1447 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(883.336 \, \mathrm{Hz}\)</td>
+        <td>\(0.1588 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(1060.004 \, \mathrm{Hz}\)</td>
+        <td>\(0.1865 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(1236.671 \, \mathrm{Hz}\)</td>
+        <td>\(0.2170 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(1370.449 \, \mathrm{Hz}\)</td>
+        <td>\(0.2468 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(1504.227 \, \mathrm{Hz}\)</td>
+        <td>\(0.2865 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(1638.004 \, \mathrm{Hz}\)</td>
+        <td>\(0.3372 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(1771.782 \, \mathrm{Hz}\)</td>
+        <td>\(0.3996 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(1905.560 \, \mathrm{Hz}\)</td>
+        <td>\(0.4631 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(2039.338 \, \mathrm{Hz}\)</td>
+        <td>\(0.5576 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(2173.115 \, \mathrm{Hz}\)</td>
+        <td>\(0.6372 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(2306.893 \, \mathrm{Hz}\)</td>
+        <td>\(0.7058 \, \mathrm{V}\)</td>
+      </tr>
+      <tr style="color: red;">
+        <td>\(2440.671 \, \mathrm{Hz}\)</td>
+        <td>\(0.7182 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(2750.227 \, \mathrm{Hz}\)</td>
+        <td>\(0.5896 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(3059.782 \, \mathrm{Hz}\)</td>
+        <td>\(0.4749 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(3369.338 \, \mathrm{Hz}\)</td>
+        <td>\(0.3771 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(3678.893 \, \mathrm{Hz}\)</td>
+        <td>\(0.3133 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(3988.449 \, \mathrm{Hz}\)</td>
+        <td>\(0.2662 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(4298.004 \, \mathrm{Hz}\)</td>
+        <td>\(0.2432 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(4607.560 \, \mathrm{Hz}\)</td>
+        <td>\(0.2268 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(4917.115 \, \mathrm{Hz}\)</td>
+        <td>\(0.2108 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(5226.671 \, \mathrm{Hz}\)</td>
+        <td>\(0.1862 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(5908.575 \, \mathrm{Hz}\)</td>
+        <td>\(0.1682 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(6590.479 \, \mathrm{Hz}\)</td>
+        <td>\(0.1479 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(7272.383 \, \mathrm{Hz}\)</td>
+        <td>\(0.1301 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(7594.288 \, \mathrm{Hz}\)</td>
+        <td>\(0.1265 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(8636.192 \, \mathrm{Hz}\)</td>
+        <td>\(0.1160 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(9318.096 \, \mathrm{Hz}\)</td>
+        <td>\(0.1123 \, \mathrm{V}\)</td>
+      </tr>
+      <tr>
+        <td>\(10000.000 \, \mathrm{Hz}\)</td>
+        <td>\(0.1007 \, \mathrm{V}\)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>由上面第一张表格，拟合之后可以得到下图的曲线：</p>
+  <figure>
+    <img src="img/32.png" alt="" width="500">
+    <figcaption>\(R=1000\ \Omega\)时的\(U_R\)、\(U_L\)、\(U_C\)的幅频特性拟合曲线</figcaption>
+  </figure>
+  <p>如果把第二张表格中得到的数据也画进上面的图中，则可以得到下图：</p>
+  <figure>
+    <img src="img/34.png" alt="" width="500">
+    <figcaption>\(U_R\)、\(U_L\)、\(U_C\)的幅频特性拟合曲线</figcaption>
+  </figure>
+  <p>上图中\(U_{R2}\)是\(R=100\ \Omega\)时的电阻电压，其他图例参照\(R=1000\ \Omega\)。</p>
+  <p>凭借上图，我们就可以说\(R=100\ \Omega\)时的品质因数要大于\(R=1000\ \Omega\)的。但可能不是很直观，那么让我们进行下面的步骤：</p>
+  <p>接下来，让我们画出通用谐振曲线，\(U_R\)对应的是\(R=1000\ \Omega\)，\(U_{R2}\)对应的是\(R=100\ \Omega\)，如下图：</p>
+  <figure>
+    <img src="img/33.png" alt="" width="500">
+    <figcaption>\(U_R\)和\(U_{R2}\)的通用谐振曲线，\(f_0\)取测量值\(2440.671\ \mathrm{Hz}\)</figcaption>
+  </figure>
+  <p>显然\(R=100\ \Omega\)时的品质因数要大于\(R=1000\ \Omega\)，这已经非常直观了。</p>
+  <p>从上图中我们可以得到\(R=1000\ \Omega\)时的\(\displaystyle SW=1.85\times\frac{f_0}{2\pi}\approx 718.623\
+    \mathrm{s^{-1}}\)，\(R=100\
+    \Omega\)时的\(\displaystyle
+    SW_2=0.41\times\frac{f_0}{2\pi}\approx 159.262\ \mathrm{s^{-1}}\)</p>
+  <p>根据\(\displaystyle Q=\frac{\omega_0}{SW}=\frac{\frac{f_0}{2\pi}}{SW}\)，我们可以算得，\(R=1000\ \Omega\)时的\(Q\approx
+    0.54\)，\(R=100\ \Omega\)时的\(Q_2
+    \approx
+    2.44\)。</p>
+  <p>最后，我们把信号发生器切换为方波，频率调回\(f_0=2440.641\ \mathrm{Hz}\)，\(R\)切换为可变电阻，调节\(R\)，是可以使\(U_R\)接近理想正弦波形的，如下图：</p>
+  <figure>
+    <img src="img/35.jpeg" alt="" width="500">
+    <figcaption>\(U_S\)（CH2，紫色）和\(U_R\)（CH1，黄色）的波形，\(R=50\ \Omega\)</figcaption>
+  </figure>
+  <p>记录下此时\(R=50\ \Omega\)。</p>
+  <p>以示对比，我们给出\(R\)为其他值时的效果：</p>
+  <figure>
+    <img src="img/36.jpeg" alt="" width="500">
+    <figcaption>\(U_S\)（CH2，紫色）和\(U_R\)（CH1，黄色）的波形，\(R=30\ \Omega\)</figcaption>
+  </figure>
+  <hr>
+  <figure>
+    <img src="img/37.jpeg" alt="" width="500">
+    <figcaption>\(U_S\)（CH2，紫色）和\(U_R\)（CH1，黄色）的波形，\(R=100\ \Omega\)</figcaption>
+  </figure>
+  <hr>
+  <figure>
+    <img src="img/38.jpeg" alt="" width="500">
+    <figcaption>\(U_S\)（CH2，紫色）和\(U_R\)（CH1，黄色）的波形，\(R=10000\ \Omega\)</figcaption>
+  </figure>
+  <h2 id="title-6">六、实验结果与分析</h2>
+  <p>首先给出品质因数的理论值。根据公式\(\displaystyle Q=\frac{1}{R}\sqrt{\frac{L}{C}}\)，\(R=1000\ \Omega\)时的\(Q_{理论}\approx
+    0.63\)，\(R=100\ \Omega\)时的\(Q_{2理论}\approx 6.32\)。</p>
+  <p>整理上一部分中得到的结果如下表：</p>
+  <table class="data">
+    <caption>实验结果记录表格</caption>
+    <tbody>
+      <tr>
+        <td></td>
+        <th>\(R=100\ \Omega\)</th>
+        <th>\(R=1000\ \Omega\)</th>
+      </tr>
+      <tr>
+        <th>\(SW\)测量值</th>
+        <td>\(159.262\ \mathrm{s^{-1}}\)</td>
+        <td>\(718.623\ \mathrm{s^{-1}}\)</td>
+      </tr>
+      <tr>
+        <th>\(Q\)测量值</th>
+        <td>\(2.44\)</td>
+        <td>\(0.54\)</td>
+      </tr>
+      <tr>
+        <th>\(Q\)理论值</th>
+        <td>\(6.32\)</td>
+        <td>\(0.63\)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>可以发现，\(R=1000\ \Omega\)时的测量结果和理论结果还是比较接近的，但是\(R=100\
+    \Omega\)时的测量值明显偏离理论值。这是因为我们的电感\(L\)具有电阻的缘故。我们在实验开始以前已经用万用表测得\(R_L=74.1\ \Omega\)。当接入的\(R=1000\
+    \Omega\)时，\(R_L\)的影响较小，测得的\(Q\)还是比较接近理论值的。但是当\(R=100\ \Omega\)时，很显然此时\(R_L\)会对实验结果造成显著影响，测量值自然会严重偏离理论值。此外，当\(R=100\
+    \Omega\)时，\(U_R\)比较小，受实验室噪声的干扰就会比较明显，这也增大了\(R=100\ \Omega\)时的实验误差。</p>
+  <p>在上一部分中，我们测得\(R=50\ \Omega\)时\(U_R\)的波形接近理想正弦波形。下面我阐释条件：</p>
+  <p>
+    实验过程中我们已经发现，\(R\)越大（大如几万欧），\(U_R\)越接近方波\(U_S\)，而当\(R\)适当的比较小但不至于太小（大约几十欧）的时候，\(U_R\)会比较接近正弦波。如果\(R\)特别小（小如几欧），此时\(U_R\)就会很小，此时会受实验室噪声的干扰而抖动严重。
+  </p>
+  <p>
+    依据傅里叶级数展开的有关知识，我们知道，方波实际上是一系列频率和振幅不相同的正弦波的叠加结果。我们的可变电阻\(R\)在这里的功能相当于是一个滤波器。当它的大小适当（大约几十欧）的时候，就可以从方波中过滤出接近单一频率的正弦波，表现在实验结果上，就是\(U_R\)接近正弦波。如果\(R\)特别大（大如几万欧），那么\(LC\)串联部分对于电路的影响就很小，\(U_R\)将和\(U_S\)接近，为方波；而当\(U_R\)特别小（小如几欧），\(R\)本身对于电路的影响就特别小，换言之，\(R\)此时很接近导线，那\(U_R\)就会很小，受实验室噪声干扰就会比较严重。
+  </p>
+  <h2 id="title-7">七、讨论、心得</h2>
+  <p>本实验，我们又使用到了示波器，通过这次实验，我们对于示波器的掌握变得更加熟练。</p>
+  <p>此外，本次实验的数据量很大，图像处理的难度较高。本次实验提升了我的MATLAB能力和数据分析能力。</p>
+  <p>本次实验的理论部分比较复杂，但给我们带来了很多新知识。</p>
+  <p>在实验过程中，当电压值比较小的时候，实验室的噪声干扰比较明显，这造成了示波器内读数困难，也一定程度上增加了实验误差。</p>
+  <p>总体来讲，本次实验难度较大，但收获颇丰，希望能在后面的实验中学到更多有用的知识！</p>
+</body>
+
+</html>

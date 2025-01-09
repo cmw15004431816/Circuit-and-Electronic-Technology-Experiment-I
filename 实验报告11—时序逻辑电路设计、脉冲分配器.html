@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<!--
+浏览器Ctrl+P，A4竖版，四边距离都设定为0.4"
+使用 \( \) 创建行内LaTeX公式
+使用 \[ \] 创建块级LaTeX公式
+-->
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>实验报告</title>
+  <style>
+    html {
+      width: 595px;
+      height: 842px;
+      margin: auto;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000000;
+      background-color: #FFFFFF;
+      line-height: 1.8;
+    }
+
+    .university {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .table-container {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .right-table {
+      position: absolute;
+      top: -55px;
+      right: -95px;
+      padding: 8px;
+      font-size: 14px;
+      width: 240px;
+      text-align: left;
+    }
+
+    .info-table,
+    .info-table2,
+    .info-table3,
+    .content-table {
+      width: 100%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .info-table td,
+    .info-table2 td,
+    .info-table3 td,
+    .content-table td {
+      color: #000000;
+      font-size: 18px;
+      border: none;
+    }
+
+    .info-table td:first-child {
+      width: 50%;
+    }
+
+    .info-table td:nth-child(2) {
+      width: 29%;
+    }
+
+    .info-table td:last-child {
+      width: 21%;
+      text-align: right;
+    }
+
+    .info-table2 td:first-child {
+      width: 68%;
+    }
+
+    .info-table2 td:last-child {
+      width: 32%;
+      text-align: right;
+    }
+
+    .info-table3 td:first-child {
+      width: 30%;
+    }
+
+    .info-table3 td:nth-child(2) {
+      width: 40%;
+      text-align: center;
+    }
+
+    .info-table3 td:last-child {
+      width: 30%;
+      text-align: right;
+    }
+
+    .footer {
+      text-align: right;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .content-table td+td {
+      border-left: 1.5px solid grey;
+    }
+
+    .content-table th,
+    .content-table td {
+      text-indent: 2em;
+      padding: 8px;
+      text-align: left;
+      color: #000000;
+      border: none;
+    }
+
+    a:link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      /* color: purple; */
+      color: blue;
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      font-family: Courier New;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    p {
+      text-indent: 2em;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figcaption {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    caption {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .data-1,
+    .data-2 {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      justify-content: center;
+      border-collapse: collapse;
+      box-sizing: border-box;
+      text-indent: initial;
+      unicode-bidi: isolate;
+      border-spacing: 2px;
+      border-color: gray;
+    }
+
+    .data-1 th,
+    .data-1 td,
+    .data-2 th,
+    .data-2 td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .data-1 td:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+
+    .data-2 tr:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+
+    .new-page {
+      page-break-before: always;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<div class="university"><img alt="Zhejiang university" src="img/report.png"></div>
+
+<div class="table-container">
+  <h2
+    style="text-align: center; font-weight: normal; font-size: 36px; margin-top: 10px; margin-bottom: 40px; display: inline-block; position: relative;">
+    实验报告</h2>
+  <table class="right-table">
+    <tr>
+      <td>专业：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+    </tr>
+    <tr>
+      <td>姓名：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+    </tr>
+    <tr>
+      <td>学号：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+    </tr>
+    <tr>
+      <td>日期：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+    </tr>
+    <tr>
+      <td>地点：<u>xxxxxxxxxxxxxxxxxxx</u></td>
+    </tr>
+  </table>
+</div>
+
+<table class="info-table">
+  <tr>
+    <td>课程名称：<u>电路与电子技术实验 I</u></td>
+    <td>指导老师：<u>xxxxxx</u></td>
+    <td>成绩：<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>分</td>
+  </tr>
+</table>
+<table class="info-table2">
+  <tr>
+    <td>实验名称：<u>时序逻辑电路设计、脉冲分配器</u></td>
+    <td>实验类型：<u>个人实验</u></td>
+  </tr>
+</table>
+<table class="info-table3">
+  <tr>
+    <td>姓名：<u>xxxxxx</u></td>
+    <td>学号：<u>xxxxxxxxxxxx</u></td>
+    <td>同组学生姓名：<u>无</u></td>
+  </tr>
+</table>
+
+<p style="line-height: 1.8; font-size: 24px; margin-bottom: 20px; margin-left: -50px;">
+  目录（实验25）：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目录（实验27）：
+</p>
+<table class="content-table">
+  <tr>
+    <td style="font-size: 20px;"><a href="#title-1-1">一、实验目的和要求</a></td>
+    <td style="font-size: 20px;"><a href="#title-1-2">一、实验目的和要求</a></td>
+  </tr>
+  <tr>
+    <td style="font-size: 20px;"><a href="#title-2-1">二、实验内容和原理</a></td>
+    <td style="font-size: 20px;"><a href="#title-2-2">二、实验内容和原理</a></td>
+  </tr>
+  <tr>
+    <td style="font-size: 20px;"><a href="#title-3-1">三、主要仪器设备</a></td>
+    <td style="font-size: 20px;"><a href="#title-3-2">三、主要仪器设备</a></td>
+  </tr>
+  <tr>
+    <td style="font-size: 20px;"><a href="#title-4-1">四、操作方法和实验步骤</a></td>
+    <td style="font-size: 20px;"><a href="#title-4-2">四、操作方法和实验步骤</a></td>
+  </tr>
+  <tr>
+    <td style="font-size: 20px;"><a href="#title-5-1">五、实验数据记录和处理</a></td>
+    <td style="font-size: 20px;"><a href="#title-5-2">五、实验数据记录和处理</a></td>
+  </tr>
+  <tr>
+    <td style="font-size: 20px;"><a href="#title-6-1">六、实验结果与分析</a></td>
+    <td style="font-size: 20px;"><a href="#title-6-2">六、实验结果与分析</a></td>
+  </tr>
+  <tr>
+    <td style="font-size: 20px;"><a href="#title-7-1">七、讨论、心得</a></td>
+    <td style="font-size: 20px;"><a href="#title-7-2">七、讨论、心得</a></td>
+  </tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+
+<div style="text-align: center">
+  <h1>电路与电子技术实验报告</h1>
+  <h1 style="font-size: 26px;">实验25—时序逻辑电路设计</h1>
+</div>
+
+<h2 id="title-1-1">一、实验目的和要求</h2>
+
+<h2>实验目的</h2>
+
+<ol>
+  <li>加深理解时序电路的工作原理；</li>
+  <li>学习时序电路的设计与调试；</li>
+  <li>掌握时序集成电路的应用。</li>
+</ol>
+
+<h2>实验要求</h2>
+
+<ol>
+  <li>请不要带食物进入实验室，更不允许在实验室用餐；</li>
+  <li>请勿大声喧哗，不要随意走动，不要私自更换实验设备；</li>
+  <li>请听从实验指导老师的安排，独立完成实验；</li>
+  <li>实验完毕请关闭电源，万用电表用完后关闭电源归还，并摆放整齐；整理实验桌面，保持实验室整洁；</li>
+  <li>请注意用电安全，包括人身安全和设备安全；</li>
+  <li>文明实验。</li>
+</ol>
+
+<h2 id="title-2-1">二、实验内容和原理</h2>
+
+<h2>实验内容</h2>
+
+<p>用<code>74LS107</code>型\(JK\)触发器和<code>74LS11</code>三输入与门设计一个\(8421_{\text{BCD}}\)码的同步十进制加法计数器。</p>
+
+<h2>实验原理</h2>
+
+<p>基本时序电路的设计——同步十进制加法计数器设计。</p>
+
+<p>首先分析电路基本计数功能，我们需要有四位输出，故需用到\(4\)个\(JK\)触发器，两片<code>74LS107</code>芯片。</p>
+
+<p>下面给出同步十进制加法计数器的状态转换图：</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="170" font-family="Arial" font-size="16"
+  style="display: block; margin-left: auto">
+  <!-- Nodes -->
+  <text x="0" y="20">Q<tspan dy="5" font-size="12">3</tspan></text>
+  <text x="20" y="20">Q<tspan dy="5" font-size="12">2</tspan></text>
+  <text x="40" y="20">Q<tspan dy="5" font-size="12">1</tspan></text>
+  <text x="60" y="20">Q<tspan dy="5" font-size="12">0</tspan></text>
+  <text x="20" y="50">0000</text>
+  <text x="100" y="50">0001</text>
+  <text x="180" y="50">0010</text>
+  <text x="260" y="50">0011</text>
+  <text x="340" y="50">0100</text>
+  <text x="340" y="150">0101</text>
+  <text x="260" y="150">0110</text>
+  <text x="180" y="150">0111</text>
+  <text x="100" y="150">1000</text>
+  <text x="20" y="150">1001</text>
+
+  <!-- Arrows -->
+  <line x1="60" y1="45" x2="95" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="140" y1="45" x2="175" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="220" y1="45" x2="255" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="300" y1="45" x2="335" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="360" y1="60" x2="360" y2="130" stroke="black" marker-end="url(#arrow)" />
+  <line x1="335" y1="145" x2="300" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="255" y1="145" x2="215" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="175" y1="145" x2="140" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="100" y1="145" x2="55" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="40" y1="130" x2="40" y2="60" stroke="black" marker-end="url(#arrow)" />
+
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+  </defs>
+</svg>
+
+<p>结合\(JK\)触发器的输出方程：</p>
+
+\[Q^{n+1}=J\overline{Q^n}+\overline K Q^n\]
+
+<p>可得同步十进制加法计数器的状态表：</p>
+
+<table class="data-1" style="margin-left: -30px;">
+  <thead>
+    <tr>
+      <th rowspan="2">\({CP}\)</th>
+      <th colspan="4">初态 \(Q^{n}\)</th>
+      <th colspan="4">次态 \(Q^{n+1}\)</th>
+      <th colspan="4">\(Q^{n}\rightarrow Q^{n+1}\) 对 \({JK}\) 要求</th>
+    </tr>
+    <tr>
+      <th>\(Q_{3}\)</th>
+      <th>\(Q_{2}\)</th>
+      <th>\(Q_{1}\)</th>
+      <th>\(Q_{0}\)</th>
+      <th>\(Q_{3}\)</th>
+      <th>\(Q_{2}\)</th>
+      <th>\(Q_{1}\)</th>
+      <th>\(Q_{0}\)</th>
+      <th>\(J_{3}K_{3}\)</th>
+      <th>\(J_{2}K_{2}\)</th>
+      <th>\(J_{1}K_{1}\)</th>
+      <th>\(J_{0}K_{0}\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(1 \times\)</td>
+    </tr>
+    <tr>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(1 \times\)</td>
+      <td>\(\times 1\)</td>
+    </tr>
+    <tr>
+      <td>\(2\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(\times 0\)</td>
+      <td>\(1 \times\)</td>
+    </tr>
+    <tr>
+      <td>\(3\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(1 \times\)</td>
+      <td>\(\times 1\)</td>
+      <td>\(\times 1\)</td>
+    </tr>
+    <tr>
+      <td>\(4\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(\times 0\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(1 \times\)</td>
+    </tr>
+    <tr>
+      <td>\(5\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(\times 0\)</td>
+      <td>\(1 \times\)</td>
+      <td>\(\times 1\)</td>
+    </tr>
+    <tr>
+      <td>\(6\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(\times 0\)</td>
+      <td>\(\times 0\)</td>
+      <td>\(1 \times\)</td>
+    </tr>
+    <tr>
+      <td>\(7\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1 \times\)</td>
+      <td>\(\times 1\)</td>
+      <td>\(\times 1\)</td>
+      <td>\(\times 1\)</td>
+    </tr>
+    <tr>
+      <td>\(8\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(\times 0\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(1 \times\)</td>
+    </tr>
+    <tr>
+      <td>\(9\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(\times 1\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(0 \times\)</td>
+      <td>\(\times 1\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>接下来只需要用卡诺图去求 \(J_3\)、\(K_3\)、\(J_2\)、\(K_2\)、\(J_1\)、\(K_1\)、\(J_0\) 和 \(K_0\)的表达式即可。</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">J<tspan dy="5" font-size="12">3</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">0</text>
+  <text x="202" y="120">0</text>
+  <text x="278" y="120">0</text>
+  <text x="352" y="120">0</text>
+  <text x="128" y="195">0</text>
+  <text x="202" y="195">0</text>
+  <text x="278" y="195">1</text>
+  <text x="352" y="195">0</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">×</text>
+  <text x="202" y="345">×</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="240" y="150" width="75" height="150" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[J_3=Q_2 Q_1 Q_0\]
+
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">K<tspan dy="5" font-size="12">3</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">×</text>
+  <text x="202" y="120">×</text>
+  <text x="278" y="120">×</text>
+  <text x="352" y="120">×</text>
+  <text x="128" y="195">×</text>
+  <text x="202" y="195">×</text>
+  <text x="278" y="195">×</text>
+  <text x="352" y="195">×</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">0</text>
+  <text x="202" y="345">1</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="165" y="75" width="150" height="300" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[K_3=Q_0\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">J<tspan dy="5" font-size="12">2</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">0</text>
+  <text x="202" y="120">0</text>
+  <text x="278" y="120">1</text>
+  <text x="352" y="120">0</text>
+  <text x="128" y="195">×</text>
+  <text x="202" y="195">×</text>
+  <text x="278" y="195">×</text>
+  <text x="352" y="195">×</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">0</text>
+  <text x="202" y="345">0</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="240" y="75" width="75" height="300" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[J_2=Q_1 Q_0\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">K<tspan dy="5" font-size="12">2</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">×</text>
+  <text x="202" y="120">×</text>
+  <text x="278" y="120">×</text>
+  <text x="352" y="120">×</text>
+  <text x="128" y="195">0</text>
+  <text x="202" y="195">0</text>
+  <text x="278" y="195">1</text>
+  <text x="352" y="195">0</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">×</text>
+  <text x="202" y="345">×</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="240" y="75" width="75" height="300" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[K_2=Q_1 Q_0\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">J<tspan dy="5" font-size="12">1</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">0</text>
+  <text x="202" y="120">1</text>
+  <text x="278" y="120">×</text>
+  <text x="352" y="120">×</text>
+  <text x="128" y="195">0</text>
+  <text x="202" y="195">1</text>
+  <text x="278" y="195">×</text>
+  <text x="352" y="195">×</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">0</text>
+  <text x="202" y="345">0</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="165" y="75" width="150" height="150" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[J_1=\overline{Q_3} Q_0\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">K<tspan dy="5" font-size="12">1</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">×</text>
+  <text x="202" y="120">×</text>
+  <text x="278" y="120">1</text>
+  <text x="352" y="120">0</text>
+  <text x="128" y="195">×</text>
+  <text x="202" y="195">×</text>
+  <text x="278" y="195">1</text>
+  <text x="352" y="195">0</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">×</text>
+  <text x="202" y="345">×</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="165" y="75" width="150" height="300" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[K_1=Q_0\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">J<tspan dy="5" font-size="12">0</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">1</text>
+  <text x="202" y="120">×</text>
+  <text x="278" y="120">×</text>
+  <text x="352" y="120">1</text>
+  <text x="128" y="195">1</text>
+  <text x="202" y="195">×</text>
+  <text x="278" y="195">×</text>
+  <text x="352" y="195">1</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">1</text>
+  <text x="202" y="345">×</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[J_0=1\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="40" y="30" font-size="18">K<tspan dy="5" font-size="12">0</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="33" y="70" font-size="18">Q<tspan y="60" x="45" font-size="12">n</tspan>
+    <tspan y="75" x="43" font-size="12">3</tspan>
+  </text>
+  <text x="53" y="70" font-size="18">Q<tspan y="60" x="65" font-size="12">n</tspan>
+    <tspan y="75" x="63" font-size="12">2</tspan>
+  </text>
+  <text x="75" y="45" font-size="18">Q<tspan y="35" x="87" font-size="12">n</tspan>
+    <tspan y="50" x="85" font-size="12">1</tspan>
+  </text>
+  <text x="95" y="45" font-size="18">Q<tspan y="35" x="107" font-size="12">n</tspan>
+    <tspan y="50" x="105" font-size="12">0</tspan>
+  </text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">×</text>
+  <text x="202" y="120">1</text>
+  <text x="278" y="120">1</text>
+  <text x="352" y="120">×</text>
+  <text x="128" y="195">×</text>
+  <text x="202" y="195">1</text>
+  <text x="278" y="195">1</text>
+  <text x="352" y="195">×</text>
+  <text x="128" y="270">×</text>
+  <text x="202" y="270">×</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">×</text>
+  <text x="128" y="345">×</text>
+  <text x="202" y="345">1</text>
+  <text x="278" y="345">×</text>
+  <text x="352" y="345">×</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[K_0=1\]
+<hr>
+
+<p>综上所述，我们得到以下结果：</p>
+
+\[
+\begin{aligned}
+&J_0=K_0=1 \\[8pt]
+&J_1=\overline{Q_3} Q_0 \qquad\quad\, K_1=Q_0 \\[10pt]
+&J_2=K_2=Q_1 Q_0 \\[10pt]
+&J_3=Q_2 Q_1 Q_0 \qquad K_3=Q_0
+\end{aligned}
+\]
+
+<p>以上即为同步十进制加法计数器设计的实验原理。</p>
+
+<h2 id="title-3-1">三、主要仪器设备</h2>
+
+<p><code>74LS107</code>型\(JK\)触发器和<code>74LS11</code>三输入与门。</p>
+
+<h2 id="title-4-1">四、操作方法和实验步骤</h2>
+
+<p>按照我们在<a href="#title-2-1">实验内容和原理</a>中给出的原理：</p>
+
+\[
+\begin{aligned}
+&J_0=K_0=1 \\[8pt]
+&J_1=\overline{Q_3} Q_0 \qquad\quad\, K_1=Q_0 \\[10pt]
+&J_2=K_2=Q_1 Q_0 \\[10pt]
+&J_3=Q_2 Q_1 Q_0 \qquad K_3=Q_0
+\end{aligned}
+\]
+
+<span>即可进行实际电路连接。\(J_1\)、\(J_2\)、\(K_2\) 和 \(J_3\) 使用<code>74LS11</code>三输入与门实现。</span>
+
+<p>附<code>74LS11</code>三输入与门的引脚排列如下：</p>
+
+<figure>
+  <img src="img/73.png" alt="" width="500">
+  <figcaption><code>74LS11</code>三输入与门引脚排列图</figcaption>
+</figure>
+
+<p>电路连接完成以后，首先将输出 \(Q_3\)、\(Q_2\)、\(Q_1\)、\(Q_0\)
+  分别连接到数码管模块的\(D\)、\(C\)、\(B\)、\(A\)（\(D\)为高位），计数脉冲\(CP\)接\(1\,\mathrm{Hz}\)信号或手控脉冲，观察显示结果。</p>
+
+<p>
+  结果正确后，将\(CP\)改接到\(1024\,\mathrm{Hz}\)信号上，用示波器观察\(CP\)及\(4\)个输出端的波形，拍照记录实验波形。要求记录照片为：\(CP\)与\(Q_0\)，\(Q_0\)与\(Q_1\)，\(Q_1\)与\(Q_2\)，\(Q_2\)与\(Q_3\)共计\(4\)张照片。
+</p>
+
+<h2 id="title-5-1">五、实验数据记录和处理</h2>
+
+<p>本实验没有实验数据，无需进行处理。</p>
+
+<h2 id="title-6-1">六、实验结果与分析</h2>
+
+<p>本次实验中，我们实现的是<strong>六进制</strong>同步加法计数器，下面给出<strong>六进制</strong>的波形图。</p>
+
+<p>六进制时，\(Q_3\)永远为\(0\)，故实验中将之略去，下面将只有\(3\)张图片。</p>
+
+<figure>
+  <img src="img/74.jpg" alt="" width="500">
+  <figcaption>同步六进制加法计数器——\(CP\)（黄）与\(Q_0\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+<figure>
+  <img src="img/75.jpg" alt="" width="500">
+  <figcaption>同步六进制加法计数器——\(Q_0\)（黄）与\(Q_1\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+<figure>
+  <img src="img/76.jpg" alt="" width="500">
+  <figcaption>同步六进制加法计数器——\(Q_1\)（黄）与\(Q_2\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+
+<p>由波形图可知，我们的电路正确实现了同步六进制加法计数器的功能。</p>
+
+<h2 id="title-7-1">七、讨论、心得</h2>
+
+<p>通过本次实验，我们进一步练习了时序电路的设计，对于一般的时序电路的设计有了更深的理解。</p>
+
+<div class="new-page"></div>
+
+<div style="text-align: center">
+  <h1>电路与电子技术实验报告</h1>
+  <h1 style="font-size: 26px;">实验27—脉冲分配器</h1>
+</div>
+
+<h2 id="title-1-2">一、实验目的和要求</h2>
+
+<h2>实验目的</h2>
+
+<ol>
+  <li>加深理解时序电路的工作原理；</li>
+  <li>学习时序电路的设计与调试；</li>
+  <li>掌握时序集成电路的应用。</li>
+</ol>
+
+<h2>实验要求</h2>
+
+<ol>
+  <li>请不要带食物进入实验室，更不允许在实验室用餐；</li>
+  <li>请勿大声喧哗，不要随意走动，不要私自更换实验设备；</li>
+  <li>请听从实验指导老师的安排，独立完成实验；</li>
+  <li>实验完毕请关闭电源，万用电表用完后关闭电源归还，并摆放整齐；整理实验桌面，保持实验室整洁；</li>
+  <li>请注意用电安全，包括人身安全和设备安全；</li>
+  <li>文明实验。</li>
+</ol>
+
+<h2 id="title-2-2">二、实验内容和原理</h2>
+
+<h2>实验内容</h2>
+
+<p>用<code>74LS74</code>型\(D\)触发器和<code>74LS55</code>与或非门设计脉冲分配器电路。</p>
+
+<h2>实验原理</h2>
+
+<p>基本时序电路的设计——脉冲分配器设计。</p>
+
+<p>首先分析电路基本计数功能，我们需要有三位输出，故需用到\(3\)个\(D\)触发器，两片<code>74LS74</code>芯片。</p>
+
+<p>可以给出\(X=0\) 跟 \(X=1\)时的状态转换图分别为：</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="170" font-family="Arial" font-size="16"
+  style="display: block; margin-left: 30px;">
+  <!-- First SVG -->
+  <!-- Nodes -->
+  <text x="0" y="20">Q<tspan dy="5" font-size="12">2</tspan></text>
+  <text x="20" y="20">Q<tspan dy="5" font-size="12">1</tspan></text>
+  <text x="40" y="20">Q<tspan dy="5" font-size="12">0</tspan></text>
+  <text x="20" y="50">100</text>
+  <text x="100" y="50">110</text>
+  <text x="180" y="50">010</text>
+  <text x="180" y="150">011</text>
+  <text x="100" y="150">001</text>
+  <text x="20" y="150">101</text>
+  <text x="100" y="100">X = 0</text>
+
+  <!-- Arrows -->
+  <line x1="55" y1="45" x2="95" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="135" y1="45" x2="170" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="195" y1="60" x2="195" y2="130" stroke="black" marker-end="url(#arrow)" />
+  <line x1="170" y1="145" x2="135" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="90" y1="145" x2="55" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="35" y1="130" x2="35" y2="60" stroke="black" marker-end="url(#arrow)" />
+
+  <!-- Second SVG -->
+  <!-- Nodes -->
+  <text x="300" y="20">Q<tspan dy="5" font-size="12">2</tspan></text>
+  <text x="320" y="20">Q<tspan dy="5" font-size="12">1</tspan></text>
+  <text x="340" y="20">Q<tspan dy="5" font-size="12">0</tspan></text>
+  <text x="320" y="50">100</text>
+  <text x="400" y="50">101</text>
+  <text x="480" y="50">001</text>
+  <text x="480" y="150">011</text>
+  <text x="400" y="150">010</text>
+  <text x="320" y="150">110</text>
+  <text x="400" y="100">X = 1</text>
+
+  <!-- Arrows -->
+  <line x1="355" y1="45" x2="395" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="435" y1="45" x2="470" y2="45" stroke="black" marker-end="url(#arrow)" />
+  <line x1="495" y1="60" x2="495" y2="130" stroke="black" marker-end="url(#arrow)" />
+  <line x1="470" y1="145" x2="435" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="390" y1="145" x2="355" y2="145" stroke="black" marker-end="url(#arrow)" />
+  <line x1="335" y1="130" x2="335" y2="60" stroke="black" marker-end="url(#arrow)" />
+</svg>
+
+<p>结合\(D\)触发器的输出方程：</p>
+
+\[Q^{n+1}=D\]
+
+<p>可得脉冲分配器的状态表：</p>
+
+<table class="data-1">
+  <thead>
+    <tr>
+      <th rowspan="2">\({X}\)</th>
+      <th colspan="3">初态 \(Q^{n}\)</th>
+      <th colspan="3">次态 \(Q^{n+1}\)</th>
+      <th colspan="3">对 \(D\) 的要求</th>
+    </tr>
+    <tr>
+      <th>\(Q_{A}\)</th>
+      <th>\(Q_{B}\)</th>
+      <th>\(Q_{C}\)</th>
+      <th>\(Q_{A}\)</th>
+      <th>\(Q_{B}\)</th>
+      <th>\(Q_{C}\)</th>
+      <th>\(D_{A}\)</th>
+      <th>\(D_{B}\)</th>
+      <th>\(D_{C}\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+    </tr>
+    <tr>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+    </tr>
+    <tr>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+    </tr>
+    <tr>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+    </tr>
+    <tr>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+    </tr>
+    <tr>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+    </tr>
+    <tr>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+    </tr>
+    <tr>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+    </tr>
+    <tr>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+    </tr>
+    <tr>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+    </tr>
+    <tr>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+    </tr>
+    <tr>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+      <td>\(1\)</td>
+      <td>\(0\)</td>
+      <td>\(0\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>接下来只需要用卡诺图去求\(D_A\)、\(D_B\) 和 \(D_C\)即可。我们将使用<strong>与或非门</strong>实现电路，所以需要化成<strong>与或非表达式</strong>，卡诺图圈\(0\)。</p>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="35" y="25" font-size="18">D<tspan dy="5" font-size="12">A</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="40" y="70" font-size="18">X</text>
+  <text x="53" y="70" font-size="18">Q<tspan y="75" x="63" font-size="12">A</tspan></text>
+  <text x="75" y="45" font-size="18">Q<tspan y="50" x="85" font-size="12">B</tspan></text>
+  <text x="95" y="45" font-size="18">Q<tspan y="50" x="105" font-size="12">C</tspan></text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">×</text>
+  <text x="202" y="120">0</text>
+  <text x="278" y="120">0</text>
+  <text x="352" y="120">1</text>
+  <text x="128" y="195">1</text>
+  <text x="202" y="195">0</text>
+  <text x="278" y="195">×</text>
+  <text x="352" y="195">1</text>
+  <text x="128" y="270">1</text>
+  <text x="202" y="270">1</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">0</text>
+  <text x="128" y="345">×</text>
+  <text x="202" y="345">1</text>
+  <text x="278" y="345">1</text>
+  <text x="352" y="345">0</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="165" y="75" width="150" height="147" fill="none" stroke="magenta" stroke-width="2" />
+  <rect x="240" y="228" width="150" height="147" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[D_A=\overline{XQ_B+\overline X Q_C}\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="35" y="25" font-size="18">D<tspan dy="5" font-size="12">B</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="40" y="70" font-size="18">X</text>
+  <text x="53" y="70" font-size="18">Q<tspan y="75" x="63" font-size="12">A</tspan></text>
+  <text x="75" y="45" font-size="18">Q<tspan y="50" x="85" font-size="12">B</tspan></text>
+  <text x="95" y="45" font-size="18">Q<tspan y="50" x="105" font-size="12">C</tspan></text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">×</text>
+  <text x="202" y="120">1</text>
+  <text x="278" y="120">1</text>
+  <text x="352" y="120">1</text>
+  <text x="128" y="195">0</text>
+  <text x="202" y="195">0</text>
+  <text x="278" y="195">×</text>
+  <text x="352" y="195">0</text>
+  <text x="128" y="270">1</text>
+  <text x="202" y="270">0</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">1</text>
+  <text x="128" y="345">×</text>
+  <text x="202" y="345">0</text>
+  <text x="278" y="345">0</text>
+  <text x="352" y="345">1</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="90" y="150" width="300" height="72" fill="none" stroke="magenta" stroke-width="2" />
+  <rect x="165" y="228" width="150" height="147" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[D_B=\overline{XQ_C+\overline X Q_A}\]
+<hr>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" font-family="Arial" font-size="16" text-anchor="middle"
+  style="display: block; margin-left: 45px;">
+  <!-- Table Border -->
+  <rect x="90" y="75" width="300" height="300" fill="none" stroke="black" stroke-width="2" />
+
+  <text x="35" y="25" font-size="18">D<tspan dy="5" font-size="12">C</tspan></text>
+  <line x1="50" y1="35" x2="90" y2="75" stroke="black" stroke-width="1" />
+
+  <!-- Vertical Lines -->
+  <line x1="165" y1="75" x2="165" y2="375" stroke="black" stroke-width="1" />
+  <line x1="240" y1="75" x2="240" y2="375" stroke="black" stroke-width="1" />
+  <line x1="315" y1="75" x2="315" y2="375" stroke="black" stroke-width="1" />
+
+  <!-- Horizontal Lines -->
+  <line x1="90" y1="150" x2="390" y2="150" stroke="black" stroke-width="1" />
+  <line x1="90" y1="225" x2="390" y2="225" stroke="black" stroke-width="1" />
+  <line x1="90" y1="300" x2="390" y2="300" stroke="black" stroke-width="1" />
+
+  <!-- Header Labels -->
+  <text x="128" y="65">00</text>
+  <text x="202" y="65">01</text>
+  <text x="278" y="65">11</text>
+  <text x="352" y="65">10</text>
+  <text x="65" y="120">00</text>
+  <text x="65" y="195">01</text>
+  <text x="65" y="270">11</text>
+  <text x="65" y="345">10</text>
+
+  <!-- Subscripts -->
+  <text x="40" y="70" font-size="18">X</text>
+  <text x="53" y="70" font-size="18">Q<tspan y="75" x="63" font-size="12">A</tspan></text>
+  <text x="75" y="45" font-size="18">Q<tspan y="50" x="85" font-size="12">B</tspan></text>
+  <text x="95" y="45" font-size="18">Q<tspan y="50" x="105" font-size="12">C</tspan></text>
+
+  <!-- Cell Values -->
+  <text x="128" y="120">×</text>
+  <text x="202" y="120">1</text>
+  <text x="278" y="120">0</text>
+  <text x="352" y="120">0</text>
+  <text x="128" y="195">1</text>
+  <text x="202" y="195">1</text>
+  <text x="278" y="195">×</text>
+  <text x="352" y="195">0</text>
+  <text x="128" y="270">0</text>
+  <text x="202" y="270">0</text>
+  <text x="278" y="270">×</text>
+  <text x="352" y="270">0</text>
+  <text x="128" y="345">×</text>
+  <text x="202" y="345">1</text>
+  <text x="278" y="345">1</text>
+  <text x="352" y="345">1</text>
+
+  <!-- Highlighted Cell -->
+  <rect x="90" y="228" width="300" height="72" fill="none" stroke="magenta" stroke-width="2" />
+  <rect x="240" y="75" width="150" height="147" fill="none" stroke="magenta" stroke-width="2" />
+</svg>
+
+\[D_C=\overline{XQ_A+\overline X Q_B}\]
+<hr>
+
+<p>综上所述，我们得到以下结果：</p>
+
+\[
+D_A=\overline{XQ_B+\overline X Q_C}\\[8pt]
+D_B=\overline{XQ_C+\overline X Q_A}\\[8pt]
+D_C=\overline{XQ_A+\overline X Q_B}
+\]
+
+<p>上述结果中的\(\overline X\)可以使用<code>74HC00</code>与非门实现。</p>
+
+<p>为了使电路能够自启动，我们考虑触发器的异步置位和复位端。无效循环为\(000 \leftrightarrow
+  111\)。当出现\(000\)或\(111\)的无效状态时，我们可以将\(Q_A\)、\(Q_B\)、\(Q_C\)置成有效状态（如\(100\)，\(101\)等）。一种可行的实现方法是令：</p>
+
+\[
+\overline{S_{DA}}=\overline{\:\,\overline{Q_A}\cdot \overline{Q_B} \cdot \overline{Q_C} \quad}\\[8pt]
+\overline{R_{DA}}=\overline{Q_A Q_B Q_C}
+\]
+
+<span>这样当电路处在无效状态时，它就可以立刻被自己异步置为有效状态，继而正常工作，也就实现了电路的自启动功能。</span>
+
+<p>以上即为脉冲分配器设计的实验原理。</p>
+
+<h2 id="title-3-2">三、主要仪器设备</h2>
+
+<p><code>74LS74</code>型\(D\)触发器、<code>74LS55</code>与或非门和<code>74HC00</code>与非门。</p>
+
+<h2 id="title-4-2">四、操作方法和实验步骤</h2>
+
+<p>按照我们在<a href="#title-2-2">实验内容和原理</a>中给出的原理：</p>
+
+\[
+\begin{aligned}
+&D_A=\overline{XQ_B+\overline X Q_C}\\[8pt]
+&D_B=\overline{XQ_C+\overline X Q_A}\\[8pt]
+&D_C=\overline{XQ_A+\overline X Q_B}\\[8pt]
+&\overline{S_{DA}}=\overline{\:\,\overline{Q_A}\cdot \overline{Q_B} \cdot \overline{Q_C} \quad}\\[8pt]
+&\overline{R_{DA}}=\overline{Q_A Q_B Q_C}
+\end{aligned}
+\]
+
+<span>即可进行实际电路连接。\(D_A\)、\(D_B\) 和 \(D_C\) 使用<code>74LS55</code>与或非门实现，\(\overline
+  X\)使用<code>74HC00</code>与非门实现。（当然，也可以用两个触摸开关分别实现\(X\)和\(\overline X\)，需要保证这两个触摸开关始终处于相反电平状态）。</span>
+
+<p>
+  电路连接完成以后，首先将输出\(Q_A\)、\(Q_B\)、\(Q_C\)分别连接到数码管模块的\(C\)、\(B\)、\(A\)（\(C\) 和
+  \(Q_A\) 为高位），\(X\)接触摸开关，时钟脉冲\(CP\)接\(1\,\mathrm{Hz}\)信号或手控脉冲。分别让\(X=1\)和\(X=0\)，观察显示的结果。除此之外还应检查电路的自启动功能。
+</p>
+
+<p>
+  结果均正确后，将\(CP\)改接到\(1024\,\mathrm{Hz}\)信号上，用示波器观察\(CP\)及\(3\)个输出端的波形，拍照记录实验波形。要求记录照片为：在\(X=0\)情况下的\(CP\)与\(Q_A\)，\(Q_A\)与\(Q_B\)，\(Q_B\)与\(Q_C\)共计\(3\)张照片，以及在\(X=1\)情况下的\(CP\)与\(Q_A\)，\(Q_A\)与\(Q_B\)，\(Q_B\)与\(Q_C\)共计\(3\)张照片。本实验总计要求记录\(6\)张照片。
+</p>
+
+<h2 id="title-5-2">五、实验数据记录和处理</h2>
+
+<p>本实验没有实验数据，无需进行处理。</p>
+
+<h2 id="title-6-2">六、实验结果与分析</h2>
+
+<p>本实验中我们做了简化，没有实现自启动电路。</p>
+
+<p>下面给出实验结果的波形图：</p>
+
+<figure>
+  <img src="img/77.jpg" alt="" width="500">
+  <figcaption>脉冲分配器\(X=0\)——\(CP\)（黄）与\(Q_A\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+<figure>
+  <img src="img/78.jpg" alt="" width="500">
+  <figcaption>脉冲分配器\(X=0\)——\(Q_A\)（黄）与\(Q_B\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+<figure>
+  <img src="img/79.jpg" alt="" width="500">
+  <figcaption>脉冲分配器\(X=0\)——\(Q_B\)（黄）与\(Q_C\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+<figure>
+  <img src="img/80.jpg" alt="" width="500">
+  <figcaption>脉冲分配器\(X=1\)——\(CP\)（黄）与\(Q_A\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+<figure>
+  <img src="img/81.jpg" alt="" width="500">
+  <figcaption>脉冲分配器\(X=1\)——\(Q_A\)（黄）与\(Q_B\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+<figure>
+  <img src="img/82.jpg" alt="" width="500">
+  <figcaption>脉冲分配器\(X=1\)——\(Q_B\)（黄）与\(Q_C\)（紫）的波形图</figcaption>
+</figure>
+<hr>
+
+<p>由波形图可知，我们的电路正确实现了脉冲分配器的功能。</p>
+
+<h2 id="title-7-2">七、讨论、心得</h2>
+
+<p>通过本次实验，我们进一步练习了时序电路的设计，对于一般的时序电路的设计有了更深的理解。</p>
+
+<p>
+  本学期的所有电路实验至此就告一段落了。通过这一学期的实验，我的动手能力，排查实际问题的能力都得到了大幅提高。希望在下学期的课程中有更大的收获！最后，感谢老师和助教一个学期以来的辛苦付出！希望我能在最后一次的实验考试中稳定发挥，为本学期的电路实验画上一个圆满的句号。
+</p>
+
+</body>
+
+</html>
