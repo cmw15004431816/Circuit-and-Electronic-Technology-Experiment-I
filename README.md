@@ -1,6 +1,6 @@
 # Electric Circuit and Electronic Technology Experiment Ⅰ
 
-This repository contains my personal experiment reports and templates for “电路与电子技术实验 I (Electric Circuit and Electronic Technology Experiment Ⅰ)” It includes:
+This repository contains my personal experiment reports and templates for “电路与电子技术实验 Ⅰ (Electric Circuit and Electronic Technology Experiment Ⅰ)” It includes:
 
 - Two HTML templates ([template-1.html](./template-1.html) and [template-2.html](./template-2.html)) for creating experiment reports.
 - My personal experiment report files (`实验报告x—...html`, `實驗報告x—...md`).
